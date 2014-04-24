@@ -167,5 +167,8 @@ body {
  *********************************************/
 .reveal .slide-number {
   color: #13daec; }
+.reveal small {
+  font-size:.7em;
+}
 
 

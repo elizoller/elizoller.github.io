@@ -90,6 +90,12 @@ body {
   -ms-transition: all .2s linear;
   -o-transition: all .2s linear;
   transition: all .2s linear; }
+.reveal section img.apple {
+    float:left;
+    max-height:200px;
+    border:none;
+    background:none;
+  }
 
 .reveal a:hover img {
   background: rgba(255, 255, 255, 0.2);
@@ -147,10 +153,4 @@ body {
 .reveal .slide-number {
   color: #13daec; }
 
-  /*custom styles*/
-  .apple {
-    float:left;
-    max-height:200px;
-    border:none;
-    background:none;
-  }
+

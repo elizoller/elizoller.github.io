@@ -1,0 +1,14 @@
+.banner {
+background: #CCC;
+}
+.banner .lib {
+font-family: 'Cinzel Decorative', cursive;
+font-size:1.7em;
+}
+.banner .dev {
+font-family: 'Bubbler One', sans-serif;
+font-size:1.7em;
+text-transform:uppercase;
+font-weight:bold;
+}
+

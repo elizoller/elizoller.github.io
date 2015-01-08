@@ -1,0 +1,150 @@
+body {
+margin: 0;
+background:#000 url('../img/backgroundbw.jpg');
+background-size: 65%;
+background-position: top center;
+background-repeat:no-repeat;
+display: compact;
+     }
+body.inner {
+margin: 0;
+background: #403E3E;
+}
+h1, h2, h3, p {
+color: #FFF;
+}
+h1 {
+font-size: 4em;
+}
+.main {
+background-color: rgba(40, 40, 42, 0.8);
+background: rgba(40, 40, 42, 0.8);
+border-radius: 5px;
+}
+h1, h2, h3{
+font-family: "Clicker Script", cursive;
+}
+nav, brand, .main p {
+font-family: "Oregano";
+font-size: 1.5em;
+}
+nav{
+font-size: 1.5em;
+}
+.dropdown-menu, .caret {
+font-size: .8em;
+}
+.carousel-control {
+font-size: 60px;
+background: #222222;
+border: 3px solid #ffffff;
+-webkit-border-radius: 26px;
+-moz-border-radius: 26px;
+width: 50px;
+height: 50px;
+position: absolute;
+top: 40%;
+text-align: center;
+line-height: 30px;
+}
+.carousel-caption {
+background: #333333;
+background: rgba(0, 0, 0, 0.75);
+left: 0;
+right: 0;
+bottom: 0;
+z-index: 10;
+padding-top:0;
+}
+.carousel-indicators {
+bottom: 0;
+}
+/*.navbar-default {
+background: #66A3E0;
+}*/
+.navbar-inverse {
+background:rgba(0,0,0,0.8);
+}
+.nav-pills>li>a {
+color: #FFF;
+}
+.nav-pills>li>a:hover, .nav-pills>li>a:focus {
+color: #000;
+}
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
+background: #EEE;
+color: #000;
+}
+.dropdown-menu {
+background-color: #EEE;
+}
+.nav .caret {
+border-top-color: #FFF;
+border-bottom-color: #FFF;
+}
+.nav a:hover .caret {
+border-top-color: #000;
+border-bottom-color: #000;
+}
+.dropdown-menu>li.active>a, .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
+background: #000;
+color: #EEE;
+} 
+.caption h3, .caption p {
+color: #201C49;
+}
+.destination {
+background: #8EE5EE;
+}
+.destination h1 {
+color: #000000;
+}
+.attraction {
+background: #9370DB;
+}
+.attraction h1 {
+color: #000000;
+}
+.contact {
+background: #93B881;
+}
+.contact h1 {
+color: #000000;
+}
+.about {
+background: #ff9980;
+}
+.about h1 {
+color: #000000;
+}
+.rsvp {
+background: #e36f8a;
+}
+.rsvp h1 {
+color: #000000;
+}
+.ceremony {
+background: #99ccff;
+}
+.ceremony h1 {
+color: #000000;
+}
+.reception {
+background: #ffff99;
+}
+.reception h1 {
+color: #000000;
+}
+ul li {
+color: #FFF;
+}
+#footer {
+background-color: rgba(40, 40, 42, 0.8);
+background: rgba(40, 40, 42, 0.8);
+}
+form label {
+color: #FFFFFF;
+}
+form .form-group {
+color: #FFFFFF;
+}

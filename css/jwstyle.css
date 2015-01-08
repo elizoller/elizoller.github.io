@@ -1,0 +1,19 @@
+#mediaplayer {
+text-align:center; 
+vertical-align:middle;
+}
+#header {
+text-align:center;
+font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+color: #A9BED1;
+}
+#mediaplayer_wrapper {
+margin-right:auto;
+margin-left:auto;
+text-align:center;
+max-height: 500px;
+max-width: 1000px;
+}
+body {
+background: #0742A0;
+}

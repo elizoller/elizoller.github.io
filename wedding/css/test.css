@@ -138,7 +138,7 @@ footer {
 
 @media(max-width: 767px) {
   #home {
-    background: url(../img/bwsmall3.jpeg) no-repeat center center fixed; 
+    background: url(../img/bwsmall3.jpeg) cover; 
   }
   .navbar {
     background-color:rgba(0, 0, 0, 0.36);

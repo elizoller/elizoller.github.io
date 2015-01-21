@@ -143,4 +143,10 @@ footer {
   .navbar {
     background-color:rgba(0, 0, 0, 0.36);
   }
+  .home-header {
+    margin-top: 50px;
+  }
+  .navbar-collapse {
+    background-color:rgba(0, 0, 0, 0.76);
+  }
 }

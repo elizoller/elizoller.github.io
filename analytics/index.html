@@ -1,0 +1,827 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Analytics</title>
+
+		<meta name="author" content="Eli Zoller">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+		<style>
+		#ex0 div div, #ex1 div div, #ex2 div div, #ex3 div div, #ex4 div div, #ex5 div div {
+			display:block;margin-left:auto;margin-right:auto;
+		}
+		.google-visualization-table {
+			color:#000000;
+		}
+		</style>
+		<script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['corechart, table']}]}"></script>
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Web Analytics Snapshot</h1>
+					<h3>Northeastern University Libraries</h3>
+					<p>
+						<small>Created by <a href="http://eliwire.com" target="_blank">Eli Zoller</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h3>1. Intro to Analytics</h3>
+					<h3>2. Annual Overviews</h3>
+					<h3>3. How our users access us</h3>
+					<h3>4. Popular content and pages</h3>
+					<h3>5. Mobile Site and Scholar OneSearch</h3>
+				</section>
+
+				<section>
+					<section>
+						<h2>Intro to Analytics</h2>
+					</section>
+					<section>
+						<h2>Google Analytics</h2>
+						<p>January 2012 - Present</p>
+						<p>We currently gather stats on:
+							<ul>
+								<li>Library Website</li>
+								<li>Scholar OneSearch</li>
+								<li>Iris (DRS separate)</li>
+								<li>LibGuides</li>
+								<li>Mobile Site</li>
+					</section>
+					<section>
+						<h2>Google Analytics - what it offers</h2>
+						<ul>
+							<li>Visits per page</li>
+							<li>Language/Country/City of visitor</li>
+							<li>Browser, operating system, internet service provider</li>
+							<li>Real-time data and current active pages</li>
+							<li>Referral channels</li>
+							<li>Behavior flow - actual page hits and landing/exit pages</li>
+							<li>Load times</li>
+							<li>Site search usage</li>
+							<li>Events tracking - includes custom click tracking</li>
+							<li>In-page analytics</li>
+							<li>Conversion</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Heat Maps</h2>
+						<img src="images/hotjar.png" style="width:50%">
+						<p>Brought to us by <a href="http://insights.hotjar.com/sites/7386/heatmap/report/32980?type=click&width=1280" target="_blank">Hotjar</a></p>
+						<ul>
+							<li>Click action is mainly in the search box</li>
+							<li>Also clicks in the top nav, side nav, library search</li>
+							<li>Little action below the fold</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Annual Overviews: Library Website</h2>
+					</section>
+					<section>
+						<h3>Total Sessions by Month</h3>
+						      <div id="ex0"></div>
+
+						<script type="text/javascript">
+
+						google.load('visualization', '1', {packages: ['corechart']});
+						google.setOnLoadCallback(drawChart);
+
+						function drawChart() {
+
+						var data = new google.visualization.DataTable();
+						data.addColumn('date', 'Month');
+						data.addColumn('number', 'Sessions');
+
+						data.addRows([
+						[new Date(2012, 0), 35727],
+						[new Date(2012, 1), 79067],
+						[new Date(2012, 2), 68386],
+						[new Date(2012, 3), 61946],
+						[new Date(2012, 4), 45381],
+						[new Date(2012, 5), 41732],
+						[new Date(2012, 6), 43681],
+						[new Date(2012, 7), 38988],
+						[new Date(2012, 8), 68368],
+						[new Date(2012, 9), 91180],
+						[new Date(2012, 10), 76761],
+						[new Date(2012, 11), 45770],
+						[new Date(2013, 0), 73612],
+						[new Date(2013, 1), 80889],
+						[new Date(2013, 2), 76222],
+						[new Date(2013, 3), 69735],
+						[new Date(2013, 4), 52283],
+						[new Date(2013, 5), 45350],
+						[new Date(2013, 6), 45469],
+						[new Date(2013, 7), 39303],
+						[new Date(2013, 8), 63552],
+						[new Date(2013, 9), 69193],
+						[new Date(2013, 10), 58873],
+						[new Date(2013, 11), 33466],
+						[new Date(2014, 0), 59657],
+						[new Date(2014, 1), 61116],
+						[new Date(2014, 2), 62450],
+						[new Date(2014, 3), 52788],
+						[new Date(2014, 4), 42844],
+						[new Date(2014, 5), 38157],
+						[new Date(2014, 6), 40429],
+						[new Date(2014, 7), 33547],
+						[new Date(2014, 8), 66402],
+						[new Date(2014, 9), 71215],
+						[new Date(2014, 10), 62476],
+						[new Date(2014, 11), 34278],
+						[new Date(2015, 0), 54710],
+						[new Date(2015, 1), 64238],
+						[new Date(2015, 2), 20938]
+						]);
+
+
+						var options = {
+						width: 700,
+						height: 563,
+						hAxis: {
+						title: 'Year'
+						},
+						vAxis: {
+						title: 'Total Sessions'
+						}
+						};
+
+						var chart = new google.visualization.LineChart(
+						document.getElementById('ex0'));
+
+						chart.draw(data, options);
+
+						}
+
+						</script>
+					</section>
+					<section>
+						<h2>Academic Calendar Year</h2>
+						<div id="table_div"></div>
+						<script>
+							google.setOnLoadCallback(drawTable);
+
+							function drawTable() {
+								var data = new google.visualization.DataTable();
+								data.addColumn('string', 'Year');
+								data.addColumn('number', 'Sessions');
+								data.addRows([
+									['Jan 12 - Aug 12', 415493],
+									['Sept 12 - Aug 13', 764942],
+									['Sept 13 - Aug 14', 616072],
+									['Sept 14 - Mar 15', 374310]
+								]);
+
+								var table = new google.visualization.Table(document.getElementById('table_div'));
+
+								table.draw(data, {showRowNumber: true});
+							}
+						</script>
+					</section>
+					<section>
+						<h2>Languages</h2>
+						<p>Since 2012, 93.71% of users are English speakers</p>
+						<p>3.41% are Chinese speakers</p>
+						<div id="table_div2"></div>
+						<script>
+							google.setOnLoadCallback(drawTable);
+
+							function drawTable() {
+								var data = new google.visualization.DataTable();
+								data.addColumn('string', 'Year');
+								data.addColumn('number', '% English');
+								data.addColumn('number', '% Chinese');
+								data.addRows([
+									['Jan 12 - Aug 12', 94.19, 2.71],
+									['Sept 12 - Aug 13', 94.11, 3.33],
+									['Sept 13 - Aug 14', 93.57, 3.61],
+									['Sept 14 - Mar 15', 92.58, 4.0]
+								]);
+
+								var table = new google.visualization.Table(document.getElementById('table_div2'));
+
+								table.draw(data, {showRowNumber: true});
+							}
+						</script>
+					</section>
+					<section>
+						<h2>Locations</h2>
+						<p>Overall: 95.99% from the US, .41% from India, .36% from China</p>
+						<div id="table_div3" style="font-size:16px"></div>
+						<script>
+							google.setOnLoadCallback(drawTable);
+
+							function drawTable() {
+								var data = new google.visualization.DataTable();
+								data.addColumn('string', 'Year');
+								data.addColumn('number', '% US');
+								data.addColumn('number', '% Canada');
+								data.addColumn('number', '% China');
+								data.addColumn('number', '% India');
+								data.addColumn('number', '% Germany');
+								data.addColumn('number', '% UK');
+
+								data.addRows([
+									['Jan 12 - Aug 12', 96.26, .23, .41, .28, .24, .21],
+									['Sept 12 - Aug 13', 96.17, .43, .37, .33, .28, .18],
+									['Sept 13 - Aug 14', 95.6, .26, .37, .51, .16, .23],
+									['Sept 14 - Mar 15', 95.97, .25, .25, .52, .25, .23]
+								]);
+
+								var table = new google.visualization.Table(document.getElementById('table_div3'));
+
+								table.draw(data, {showRowNumber: false});
+							}
+						</script>
+					</section>
+					<section>
+						<h2>New vs. Returning</h2>
+						<p>Overall: 67.29% returning, 32.71% new</p>
+						<div id="table_div4"></div>
+						<script>
+							google.setOnLoadCallback(drawTable);
+
+							function drawTable() {
+								var data = new google.visualization.DataTable();
+								data.addColumn('string', 'Year');
+								data.addColumn('number', '% New');
+								data.addColumn('number', '% Returning');
+
+								data.addRows([
+									['Jan 12 - Aug 12', 38.63, 61.37],
+									['Sept 12 - Aug 13', 30.34, 69.66],
+									['Sept 13 - Aug 14', 31.80, 68.20],
+									['Sept 14 - Mar 15', 32.50, 67.50]
+								]);
+
+								var table = new google.visualization.Table(document.getElementById('table_div4'));
+
+								table.draw(data, {showRowNumber: true});
+							}
+						</script>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>How our Users Access us</h2>
+					</section>
+					<section>
+						<h3>Browsers</h3>
+						<p>Overall: 35.58% Chrome, 27.04% Safari, 21.23% IE, 15.15% Firefox</p>
+						<div id="table_div5" style="font-size:18px;"></div>
+						<script>
+							google.setOnLoadCallback(drawTable);
+
+							function drawTable() {
+								var data = new google.visualization.DataTable();
+								data.addColumn('string', 'Year');
+								data.addColumn('number', '% Chrome');
+								data.addColumn('number', '% Firefox');
+								data.addColumn('number', '% Safari');
+								data.addColumn('number', '% Internet Explorer');
+
+								data.addRows([
+									['Jan 12 - Aug 12', 21.15, 17.33, 27.03, 33.57],
+									['Sept 12 - Aug 13', 26.61, 14.30, 33.55, 24.49],
+									['Sept 13 - Aug 14', 45.42, 15.61, 22.35, 15.14],
+									['Sept 14 - Mar 15', 53.70, 13.57, 21.46, 10.31]
+								]);
+
+								var table = new google.visualization.Table(document.getElementById('table_div5'));
+
+								table.draw(data, {showRowNumber: true});
+							}
+						</script>
+					</section>
+					<section>
+						<h3>Browsers</h3>
+						<p>Overall: 35.58% Chrome, 27.04% Safari, 21.23% IE, 15.15% Firefox</p>
+						<div id="ex1"></div>
+
+						<script type="text/javascript">
+
+						google.load('visualization', '1', {packages: ['corechart']});
+						google.setOnLoadCallback(drawChart);
+
+						function drawChart() {
+
+						var data = new google.visualization.DataTable();
+						data.addColumn('string', 'Academic Year');
+						data.addColumn('number', 'Chrome');
+						data.addColumn('number', 'Firefox');
+						data.addColumn('number', 'Safari');
+						data.addColumn('number', 'Internet Explorer');
+
+						data.addRows([
+							['Jan 12 - Aug 12', 21.15, 17.33, 27.03, 33.57],
+							['Sept 12 - Aug 13', 26.61, 14.30, 33.55, 24.49],
+							['Sept 13 - Aug 14', 45.42, 15.61, 22.35, 15.14],
+							['Sept 14 - Mar 15', 53.70, 13.57, 21.46, 10.31]
+						]);
+
+
+						var options = {
+						width: 700,
+						height: 563,
+						hAxis: {
+						title: 'Year'
+						},
+						vAxis: {
+						title: '% of Users'
+						}
+						};
+
+						var chart = new google.visualization.LineChart(
+						document.getElementById('ex1'));
+
+						chart.draw(data, options);
+
+						}
+
+						</script>
+					</section>
+					<section>
+						<h3>Operation Systems</h3>
+						<h4>*This does not include access to the Library's Mobile Site</h4>
+						<div id="table_div6" style="font-size:18px;"></div>
+						<script>
+							google.setOnLoadCallback(drawTable);
+
+							function drawTable() {
+								var data = new google.visualization.DataTable();
+								data.addColumn('string', 'Year');
+								data.addColumn('number', '% Windows');
+								data.addColumn('number', '% Mac');
+								data.addColumn('number', '% iOS');
+								data.addColumn('number', '% Android');
+
+								data.addRows([
+									['Jan 12 - Aug 12', 60.60, 36.47, .71, .27],
+									['Sept 12 - Aug 13', 51.75, 44.16, 2.84, .54],
+									['Sept 13 - Aug 14', 53.57, 39.88, 4.48, 1.1],
+									['Sept 14 - Mar 15', 50.47, 42.01, 4.86, 1.57]
+								]);
+
+								var table = new google.visualization.Table(document.getElementById('table_div6'));
+
+								table.draw(data, {showRowNumber: true});
+							}
+						</script>
+					</section>
+					<section>
+						<h3>Operation Systems</h3>
+						<h4>*This does not include access to the Library's Mobile Site</h4>
+						<div id="ex2"></div>
+
+						<script type="text/javascript">
+
+						google.load('visualization', '1', {packages: ['corechart']});
+						google.setOnLoadCallback(drawChart);
+
+						function drawChart() {
+
+						var data = new google.visualization.DataTable();
+						data.addColumn('string', 'Academic Year');
+						data.addColumn('number', '% Windows');
+						data.addColumn('number', '% Mac');
+						data.addColumn('number', '% iOS');
+						data.addColumn('number', '% Android');
+
+						data.addRows([
+							['Jan 12 - Aug 12', 60.60, 36.47, .71, .27],
+							['Sept 12 - Aug 13', 51.75, 44.16, 2.84, .54],
+							['Sept 13 - Aug 14', 53.57, 39.88, 4.48, 1.1],
+							['Sept 14 - Mar 15', 50.47, 42.01, 4.86, 1.57]
+						]);
+
+
+						var options = {
+						width: 700,
+						height: 563,
+						hAxis: {
+						title: 'Year'
+						},
+						vAxis: {
+						title: '% of Users'
+						}
+						};
+
+						var chart = new google.visualization.LineChart(
+						document.getElementById('ex2'));
+
+						chart.draw(data, options);
+
+						}
+
+						</script>
+					</section>
+					<section>
+						<h3>Device Types</h3>
+						<h4>*This does not include access to the Library's Mobile Site</h4>
+						<div id="table_div7" style="font-size:18px;"></div>
+						<script>
+							google.setOnLoadCallback(drawTable);
+
+							function drawTable() {
+								var data = new google.visualization.DataTable();
+								data.addColumn('string', 'Year');
+								data.addColumn('number', '% Desktop');
+								data.addColumn('number', '% Mobile');
+								data.addColumn('number', '% Tablet');
+
+								data.addRows([
+									['Jan 12 - Aug 12', 97.56, .99, 1.44],
+									['Sept 12 - Aug 13', 96.47, 1.79, 1.73],
+									['Sept 13 - Aug 14', 94.06, 3.51, 2.43],
+									['Sept 14 - Mar 15', 92.07, 5.58, 2.35]
+								]);
+
+								var table = new google.visualization.Table(document.getElementById('table_div7'));
+
+								table.draw(data, {showRowNumber: true});
+							}
+						</script>
+					</section>
+					<section>
+						<h3>Acquisition Channel</h3>
+						<h4>*Note:This Data was not reliably collected prior to mid-2013</h4>
+						<div id="table_div8" style="font-size:18px;"></div>
+						<script>
+							google.setOnLoadCallback(drawTable);
+
+							function drawTable() {
+								var data = new google.visualization.DataTable();
+								data.addColumn('string', 'Year');
+								data.addColumn('number', '% Organic Search');
+								data.addColumn('number', '% Referral');
+								data.addColumn('number', '% Direct');
+								data.addColumn('number', '% Social');
+
+								data.addRows([
+									['Sept 13 - Aug 14', 36.87, 45.85, 17.0, .28],
+									['Sept 14 - Mar 15', 42.73, 41.53, 15.52, .22]
+								]);
+
+								var table = new google.visualization.Table(document.getElementById('table_div8'));
+
+								table.draw(data, {showRowNumber: true});
+							}
+						</script>
+					</section>
+					<section>
+						<h3>Top Sources</h3>
+						<div id="table_div9" style="font-size:16px;"></div>
+						<script>
+							google.setOnLoadCallback(drawTable);
+
+							function drawTable() {
+								var data = new google.visualization.DataTable();
+								data.addColumn('string', 'Year');
+								data.addColumn('number', 'Direct');
+								data.addColumn('number', 'Google');
+								data.addColumn('number', 'Myneu');
+								data.addColumn('number', 'LibGuides');
+								data.addColumn('number', 'Northeastern');
+								data.addColumn('number', 'Catalog');
+								data.addColumn('number', 'Bing');
+
+								data.addRows([
+									['Jan 12 - Aug 12', 46.55, 7.15, .81, 1.26, .05, 1.44, 1.45],
+									['Sept 12 - Aug 13', 28.03, 18.52, 22.01, 2.23, 3.24, 2.27, 1.22],
+									['Sept 13 - Aug 14', 17.00, 34.72, 23.39, 3.18, 3.43, 3.23, 1.67],
+									['Sept 14 - Mar 15', 15.52, 40.25, 22.44, 3.50, 2.69, 3.55, 1.58]
+								]);
+
+								var table = new google.visualization.Table(document.getElementById('table_div9'));
+
+								table.draw(data, {showRowNumber: false});
+							}
+						</script>
+					</section>
+					<section>
+						<h3>Top Referral Sites</h3>
+						<ul>
+							<li>Myneu.neu.edu</li>
+							<li>Subjectguides.lib.neu.edu</li>
+							<li>Northeastern.edu</li>
+							<li>Library Catalog/Scholar OneSearch</li>
+							<li>Library Mobile Site</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Popular Content and Pages</h2>
+					</section>
+					<section>
+						<div id="table_div11" style="font-size:15px;margin-top:-250px">						<h3>Top Pages</h3>
+</div>
+						<script>
+							google.setOnLoadCallback(drawTable);
+
+							function drawTable() {
+								var data = new google.visualization.DataTable();
+								data.addColumn('string', 'Page');
+								data.addColumn('number', '11-12');
+								data.addColumn('number', '12-13');
+								data.addColumn('number', '13-14');
+								data.addColumn('number', '14-15');
+
+								data.addRows([
+									['Homepage', 46, 46.77, 45.29, 42.05],
+									['Reserve a Room', 1.77, 1.26, 4.01, 4.92],
+									['A-Z Index', 2.21, 1.74, 3.76, 5.01],
+									['Article Databases', 2.35, 4.11, 3.90, 3.32],
+									['Renewal Options', .9, .89, 1.16, 1.1],
+									['Floor Maps', .12, .18, .63, 1.69],
+									['Individual Study Rooms', .18, .22, .55, .98],
+									['Archives & Special Collections', 1.05, .56, .58, .63],
+									['Citations & Bibliographies', .64, .71, 1.0, 1.05],
+									['Hours', .74, .72, .51, .88],
+									['Journals & E-Journals', .82, 1.92, 1.98, 1.72],
+									['Books & E-Books', 1.66, 1.18, 1.22, .98],
+									['Undergraduate Student Gateway', .76, .51, .68, .77],
+									['Graduate Student Gateway', .71, .77, .89, .90],
+								]);
+
+								var table = new google.visualization.Table(document.getElementById('table_div11'));
+
+								table.draw(data, {showRowNumber: false});
+							}
+						</script>
+					</section>
+					<section>
+						<h3>A-Z Index: Referrals</h3>
+						<div id="table_div10" style="font-size:15px;">
+						<script>
+							google.setOnLoadCallback(drawTable);
+
+							function drawTable() {
+								var data = new google.visualization.DataTable();
+								data.addColumn('string', 'Referral');
+								data.addColumn('number', '12-13');
+								data.addColumn('number', '13-14');
+								data.addColumn('number', '14-15');
+
+								data.addRows([
+									['Google', 19.93, 31.18, 32.45],
+									['MyNeu', 25.5, 27.88, 23.32],
+									['Direct', 18.57, 16.54, 17.39],
+									['Library', 17.81, 9.46, 8.42],
+									['Catalog', .34, 3.91, 6.85],
+									['Northeastern', 3.8, 5.21, 3.94],
+									['Subject Guides', 2.15, 2.54, 1.92],
+									['Library Mobile', .05, .37, .3],
+
+								]);
+
+								var table = new google.visualization.Table(document.getElementById('table_div10'));
+
+								table.draw(data, {showRowNumber: false});
+							}
+						</script>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Mobile Site</h2>
+					</section>
+					<section>
+						<h3>Pageviews</h3>
+						<div id="ex4"></div>
+
+						<script type="text/javascript">
+
+						google.load('visualization', '1', {packages: ['corechart']});
+						google.setOnLoadCallback(drawChart);
+
+						function drawChart() {
+
+						var data = new google.visualization.DataTable();
+						data.addColumn('date', 'Month');
+						data.addColumn('number', 'Pageviews');
+
+						data.addRows([
+						[new Date(2013, 6), 0],
+						[new Date(2013, 7), 398],
+						[new Date(2013, 8), 1984],
+						[new Date(2013, 9), 1966],
+						[new Date(2013, 10), 1666],
+						[new Date(2013, 11), 1125],
+						[new Date(2014, 0), 2441],
+						[new Date(2014, 1), 1805],
+						[new Date(2014, 2), 1680],
+						[new Date(2014, 3), 1864],
+						[new Date(2014, 4), 1494],
+						[new Date(2014, 5), 1210],
+						[new Date(2014, 6), 1310],
+						[new Date(2014, 7), 1368],
+						[new Date(2014, 8), 3717],
+						[new Date(2014, 9), 2763],
+						[new Date(2014, 10), 2419],
+						[new Date(2014, 11), 1732],
+						[new Date(2015, 0), 2897],
+						[new Date(2015, 1), 2583],
+						[new Date(2015, 2), 794]
+						]);
+
+
+						var options = {
+						width: 700,
+						height: 563,
+						hAxis: {
+						title: 'Year'
+						},
+						vAxis: {
+						title: 'Pageviews'
+						}
+						};
+
+						var chart = new google.visualization.LineChart(
+						document.getElementById('ex4'));
+
+						chart.draw(data, options);
+
+						}
+
+						</script>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Scholar OneSearch</h2>
+					</section>
+					<section>
+						<h3>Pageviews</h3>
+						<div id="ex5"></div>
+
+						<script type="text/javascript">
+
+						google.load('visualization', '1', {packages: ['corechart']});
+						google.setOnLoadCallback(drawChart);
+
+						function drawChart() {
+
+						var data = new google.visualization.DataTable();
+						data.addColumn('date', 'Month');
+						data.addColumn('number', 'Pageviews');
+
+						data.addRows([
+						[new Date(2013, 6), 175762],
+						[new Date(2013, 7), 132743],
+						[new Date(2013, 8), 223032],
+						[new Date(2013, 9), 279101],
+						[new Date(2013, 10), 230557],
+						[new Date(2013, 11), 105230],
+						[new Date(2014, 0), 185737],
+						[new Date(2014, 1), 214116],
+						[new Date(2014, 2), 209642],
+						[new Date(2014, 3), 178012],
+						[new Date(2014, 4), 166595],
+						[new Date(2014, 5), 141938],
+						[new Date(2014, 6), 155621],
+						[new Date(2014, 7), 117695],
+						[new Date(2014, 8), 230981],
+						[new Date(2014, 9), 273621],
+						[new Date(2014, 10), 250673],
+						[new Date(2014, 11), 110536],
+						[new Date(2015, 0), 178742],
+						[new Date(2015, 1), 233015],
+						[new Date(2015, 2), 81098]
+
+						]);
+
+
+						var options = {
+						width: 700,
+						height: 563,
+						hAxis: {
+						title: 'Year'
+						},
+						vAxis: {
+						title: 'Pageviews'
+						}
+						};
+
+						var chart = new google.visualization.LineChart(
+						document.getElementById('ex5'));
+
+						chart.draw(data, options);
+
+						}
+
+						</script>
+					</section>
+					<section>
+						<h3>Referrals</h3>
+						<div id="table_div14" style="font-size:15px;">
+						<script>
+							google.setOnLoadCallback(drawTable);
+
+							function drawTable() {
+								var data = new google.visualization.DataTable();
+								data.addColumn('string', 'Referral');
+								data.addColumn('number', '%');
+
+								data.addRows([
+									['Library', 87.50],
+									['NCBI', 2.45],
+									['Subject Guides', 1.59],
+									['Northeastern', 1.46],
+									['Library Mobile', 1.37],
+								]);
+
+								var table = new google.visualization.Table(document.getElementById('table_div14'));
+
+								table.draw(data, {showRowNumber: false});
+							}
+						</script>
+					</section>
+					<section>
+						<h3>Referrals from the Library Website</h3>
+						<ul>
+							<li>Homepage: 79.56%</li>
+							<li>E-Journals: 2.23%</li>
+							<li>Graduate Student Gateway: 1.93%</li>
+							<li>Law Library: 1.45%</li>
+							<li>Undergraduate Student Gateway: 1.38%</li>
+							<li>Mobile Website: 1.37%</li>
+							<li>Professional Online Student Gateway: 1.05%</li>
+						</ul>
+				</section>
+
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+
+	</body>
+</html>

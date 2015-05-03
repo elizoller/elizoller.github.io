@@ -173,7 +173,7 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-12 text-center">
-          <h3>RSVP</h3>
+          <h2 class="text-center">RSVP</h2> <hr />
           <h4>We hope you’ll be joining in on the fun! Please RSVP below. If you’re having trouble, please give the Bride or Groom a call!</h4>
           <br/>
           <form role="form" action="rsvp.php" method="post">
@@ -256,7 +256,7 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-12 text-center">
-          <h3>Contact Us</h3>
+          <h2 class="text-center">Contact Us</h2> <hr />
           <h5>Have questions, comments, or concerns?</h5>
           <h6>Send us an email at <a href="mailto:zoller.eli@gmail.com">zoller.eli@gmail.com</a></h6>
           <form class="form" action="contact.php" method="post">

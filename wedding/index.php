@@ -176,7 +176,7 @@
           <h2 class="text-center">RSVP</h2> <hr />
           <h4>We hope you’ll be joining in on the fun! Please RSVP below. If you’re having trouble, please give the Bride or Groom a call!</h4>
           <br/>
-          <form role="form" action="rsvp.php" method="post">
+          <!--<form role="form" action="rsvp.php" method="post">
             <div class="form-group row">
               <label for="firstname" class="control-label col-sm-2 col-sm-offset-3">First Name: </label>
               <div class="col-sm-4">
@@ -221,7 +221,7 @@
             <div class="form-group">
               <button type="submit" class="btn btn-default " name="submit">Submit</button>
             </div>
-          </form>
+          </form>-->
           <p>Coming soon!</p>
         </div>
       </div>

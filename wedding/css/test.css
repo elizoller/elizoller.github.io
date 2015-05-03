@@ -146,3 +146,9 @@ footer {
     background-color:rgba(0, 0, 0, 0.76);
   }
 }
+
+p {
+  font-size:1.1em;
+  font-weight:bold;
+  line-height:1.5em;
+}

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -163,7 +162,7 @@
           </div>
         </div>
         <h3>Become a Local</h3>
-        <p>We know that a lot of our friends and family are travelling across states to celebrate with us, check out the links below for some good eats and must sees in the area! Interested in making a longer trip out of it? Let us know if you’d like some info on the greater Boston area, we’re happy to share our experiences with you!</p>
+        <p>We know that a lot of our friends and family are traveling across states to celebrate with us, check out the links below for some good eats and must sees in the area! Interested in making a longer trip out of it? Let us know if you’d like some info on the greater Boston area, we’re happy to share our experiences with you!</p>
       </div>
     </div>
   </div>
@@ -243,7 +242,7 @@
           <br/>
           <br/>
           <br/>
-          <p class="col-sm-8 col-sm-offset-2">Feeling like sending us on an adventure instead? We’re incredibly lucky to be spending our “Luna de Miel” (honeymoon) in Walt Disney World and on a Disney Cruise! Check out that registry for fun ways to help us splurge.</p>
+          <p class="col-sm-8 col-sm-offset-2">Feel like sending us on an adventure instead? We’re incredibly lucky to be spending our “Luna de Miel” (honeymoon) in Walt Disney World and on a Disney Cruise! Check out this registry for fun ways to help us splurge.</p>
           <br/>
           <a class="btn btn-warning btn-lg clearfix" href="http://disney.honeymoonwishes.com/Honeymoon-Registry-256909-Walt-Disney-World-Resort-Gina-Longstreet-Eli-Zoller.html">Honeymoon Registry</a>
         </div>
@@ -307,9 +306,6 @@
   <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
   <script src="js/classie.js"></script>
   <script src="js/cbpAnimatedHeader.js"></script>
-
-  <!-- Contact Form JavaScript -->
-  <script src="js/jqBootstrapValidation.js"></script>
 
   <!-- Custom Theme JavaScript -->
   <script src="js/agency.js"></script>

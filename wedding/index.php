@@ -133,7 +133,7 @@
     <div class="container">
       <div class="row">
         <h3>Where to Stay</h3>
-        <p>Both hotels are about 20 minutes from the venue. The Hilton has a shuttle bus that can take you to the venue if you’d like as well as an in-house restaurant. The Hampton is closer to the “after party” and offers a free hot breakfast beginning at 6:30am.</p>
+        <p>Both hotels are about 20 minutes from the venue. The Hilton has an in-house restaurant and bar and is where we'll be staying. The Hampton is closer to the “after party” and offers a free hot breakfast beginning at 6:30am.</p>
         <div class="col-sm-6">
           <div class="panel panel-default">
             <div class="panel-heading">
@@ -157,7 +157,7 @@
                <p>Single King- $119</p>
                <p>Double Queen- $119</p>
                <p>King Studio Suite- $129</p>
-               <p><a href="http://hamptoninn3.hilton.com/en/hotels/massachusetts/hampton-inn-and-suites-westford-chelmsford-BOSWFHX/index.html">Book here</a> with group code SMERF</p>
+               <p><a href="http://hamptoninn3.hilton.com/en/hotels/massachusetts/hampton-inn-and-suites-westford-chelmsford-BOSWFHX/index.html">Book here</a> with group code LZW</p>
             </div>
           </div>
         </div>

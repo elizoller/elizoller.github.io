@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
   <!-- attach CSS styles -->
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/test.css" rel="stylesheet" />
       <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville|Noto+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 </head>
@@ -92,33 +92,19 @@
         <div class="col-sm-3">
           <img src="img/champagne.png" class="glyphicon" alt="champagne">
           <h4>Reception</h4>
-          <h5>11:00 am</h5>
+          <h5>11am - 3pm</h5>
         </div>
-        <!--<div class="col-sm-3 col-xs-6">
-          <i class="glyphicon glyphicon-cloud"> </i>
-          <h4>Service 1</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in sem cras amet. Donec in sem cras amet.</p>
-        </div>
-        <div class="col-sm-3 col-xs-6">
-          <i class="glyphicon glyphicon-leaf"> </i>
-          <h4>Service 2</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in sem cras amet. Donec in sem cras amet.</p>
-        </div>
-        <div class="col-sm-3 col-xs-6">
-          <i class="glyphicon glyphicon-phone-alt"> </i>
-          <h4>Service 3</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in sem cras amet. Donec in sem cras amet.</p>
-        </div>
-        <div class="col-sm-3 col-xs-6">
-          <i class="glyphicon glyphicon-bullhorn"> </i>
-          <h4>Service 4</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in sem cras amet. Donec in sem cras amet.</p>
-        </div>-->
       </div>
       <div class="row text-center">
           <p>
            <a href="https://www.google.com/maps/place/Barn+at+Gibbet+Hill+Groton/@42.605651,-71.564248,17z/data=!3m1!4b1!4m2!3m1!1s0x89e3bff3b005c61b:0xd7b6f6739ae5cf91" target="_blank"><h3><span class="glyphicon glyphicon-map-marker"></span> The Barn at Gibbet Hill<br/>61 Lowell Rd<br/>Groton, MA</h3></a>
           </p>
+      </div>
+      <div class="row">
+        <div class="col-sm-10 text-center">
+          <h5>After Party</h5>
+          <p>Join us for a casual gathering at the Hilton Garden Inn for pizza and socializing! We'll be in the lobby near the hotel's bar from 6-9pm after the wedding. Hope to see you there!</p>
+        </div>
       </div>
     </div>
   </div>
@@ -176,7 +162,7 @@
           <h2 class="text-center">RSVP</h2> <hr />
           <h4>We hope you’ll be joining in on the fun! Please RSVP below. If you’re having trouble, please give the Bride or Groom a call!</h4>
           <br/>
-          <!--<form role="form" action="rsvp.php" method="post">
+          <form role="form" action="rsvp.php" method="post">
             <div class="form-group row">
               <label for="firstname" class="control-label col-sm-2 col-sm-offset-3">First Name: </label>
               <div class="col-sm-4">
@@ -200,14 +186,14 @@
               <div class="center">Will you attend? </div>
 
               <div class="center-block">
-                <div class="checkbox">
+                <div class="col-sm-2">
                   <label>
-                    <input type="checkbox" name="attendance" value="yes">Yes
+                    <input type="radio" name="attendance" id="attendance" value="yes">Yes
                   </label>
                 </div>
-                <div class="checkbox">
+                <div class="col-sm-2">
                   <label>
-                    <input type="checkbox" name="attendance" value="no">No
+                    <input type="radio" name="attendance" id="attendance" value="no">No
                   </label>
                 </div>
               </div>
@@ -221,7 +207,7 @@
             <div class="form-group">
               <button type="submit" class="btn btn-default " name="submit">Submit</button>
             </div>
-          </form>-->
+          </form>
           <p>Coming soon!</p>
         </div>
       </div>
@@ -298,8 +284,8 @@
   <!-- /footer -->
 
   <!-- attach JavaScripts -->
-  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  <script src="js/jquery-1.10.2.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
   <script src="//maps.google.com/maps/api/js?sensor=true"></script>
   <script src="js/test.js"></script>
    <!-- Plugin JavaScript -->
@@ -318,6 +304,15 @@
   ga('create', 'UA-45145656-1', 'auto');
   ga('send', 'pageview');
 
+</script>
+<script type="text/javascript">
+  $("#attendance").click(function() {
+    if ($(this).val() == "yes") {
+      console.log("attending");
+    } else if ($(this).val() == "no") {
+      console.log("not attending");
+    }
+  });
 </script>
 </body>
 </html>

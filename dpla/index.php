@@ -97,6 +97,7 @@ if ($numresults > 0) {
     echo ' ';
   }
   }
+  
 ?>
 </body>
 </html>

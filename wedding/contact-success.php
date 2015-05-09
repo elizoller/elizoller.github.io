@@ -13,59 +13,18 @@
 </head>
 <body id="page-top">
 
-  <!-- navigation panel -->
-  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header page-scroll">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-main">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand page-scroll" href="#"></a>
-      </div>
-
-      <div class="collapse navbar-collapse" id="navbar-collapse-main">
-        <ul class="nav navbar-nav navbar-right">
-          <li class="hidden"><a href="#home" class="page-scroll">Home</a></li>
-          <li><a href="#about" class="page-scroll">About Us</a></li>
-          <li><a href="#bigday" class="page-scroll">Wedding Day</a></li>
-          <li><a href="#travel" class="page-scroll">Travel</a></li>
-          <li><a href="#rsvp" class="page-scroll">RSVP</a></li>
-          <li><a href="#registry" class="page-scroll">Registry</a></li>
-          <li><a href="#contact" class="page-scroll">Contact</a></li>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>
-
-
-
   <div id="about" class="pad-section">
     <div class="container">
       <div class="row">
        <div class="col-sm-8 col-sm-offset-2">
          <div class="alert alert-success">Thanks for contacting us. We'll get back to you as soon as we can!</div>
-         <a href="index.php" class="btn btn-info btn-lg">Go Home</a>
+         <a href="index.php" class="btn btn-info btn-lg btn-block">Go Home</a>
        </div>
      </div>
    </div>
  </div>
 
-
-
- <!-- /seventh section -->
    <hr />
-
- <!-- footer -->
- <footer>
-   <div class="container">
-     <p class="text-right">Copyright &copy; Eli Zoller 2014</p>
-   </div>
- </footer>
- <!-- /footer -->
 
  <!-- attach JavaScripts -->
  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>

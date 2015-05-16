@@ -101,7 +101,7 @@
           </p>
       </div>
       <div class="row">
-        <div class="col-sm-10 text-center">
+        <div class="col-sm-10 col-sm-offset-1 text-center">
           <h5>After Party</h5>
           <p>Join us for a casual gathering at the Hilton Garden Inn for pizza and socializing! We'll be in the lobby near the hotel's bar from 6-9pm after the wedding. Hope to see you there!</p>
         </div>
@@ -162,53 +162,7 @@
           <h2 class="text-center">RSVP</h2> <hr />
           <h4>We hope you’ll be joining in on the fun! Please RSVP below. If you’re having trouble, please give the Bride or Groom a call!</h4>
           <br/>
-          <form role="form" action="rsvp.php" method="post">
-            <div class="form-group row">
-              <label for="firstname" class="control-label col-sm-2 col-sm-offset-3">First Name: </label>
-              <div class="col-sm-4">
-                <input type="text" class="form-control" placeholder="Enter your first name" name="firstname">
-              </div>
-            </div>
-            <div class="form-group row">
-              <label for="lastname" class="control-label col-sm-2 col-sm-offset-3">Last Name: </label>
-              <div class="col-sm-4">
-                <input type="text" class="form-control" placeholder="Enter your last name" name="lastname">
-              </div>
-            </div>
-            <div class="form-group row">
-              <label for="email" class="control-label col-sm-2 col-sm-offset-2">Email: </label>
-              <div class="col-sm-6">
-                <input type="email" class="form-control" placeholder="Get updates from the bride and groom" name="email">
-              </div>
-            </div>
-              <br/>
-            <div class="form-group row">
-              <div class="center">Will you attend? </div>
-
-              <div class="center-block">
-                <div class="col-sm-2">
-                  <label>
-                    <input type="radio" name="attendance" id="attendance" value="yes">Yes
-                  </label>
-                </div>
-                <div class="col-sm-2">
-                  <label>
-                    <input type="radio" name="attendance" id="attendance" value="no">No
-                  </label>
-                </div>
-              </div>
-            </div>
-            <div class="form-group row">
-              <label for="partysize" class="control-label col-sm-6 col-sm-offset-3">How many are in your party (including yourself)? </label>
-              <div class="col-sm-4 col-sm-offset-4">
-                <input type="input" class="form-control" placeholder="Enter your party size" name="partysize">
-              </div>
-            </div>
-            <div class="form-group">
-              <button type="submit" class="btn btn-default " name="submit">Submit</button>
-            </div>
-          </form>
-          <p>Coming soon!</p>
+          <a class="btn btn-success btn-lg clearfix" href="rsvp.php">RSVP</a>
         </div>
       </div>
     </div>
@@ -306,11 +260,29 @@
 
 </script>
 <script type="text/javascript">
-  $("#attendance").click(function() {
+  $('input[name=attendance]').click(function() {
     if ($(this).val() == "yes") {
       console.log("attending");
-    } else if ($(this).val() == "no") {
+    }
+    if ($(this).val() == "no") {
       console.log("not attending");
+    }
+    $("#partysize").removeAttr("disabled");
+  });
+  $("#partysize").change(function() {
+    size = $(this).val();
+    size = parseInt(size);
+    if ((size > 1) && ($('input[name=attendance]').val() == 'yes')) {
+      html = ''
+      for (i = 1; i < size; i++) {
+        console.log(i);
+        html = html + '<div class="form-group row"><label for="firstname['+i+']" class="col-sm-1">First Name</label><input name="firstname['+i+']" class="col-sm-1"><label for="lastname['+i+']" class="col-sm-1">Last Name</label><input name="lastname['+i+']" class="col-sm-1"><label for="entree['+i+']" class="col-sm-1">Entree Choice</label><select class="col-sm-1" name="entree['+i+']"><option value="chicken">Chicken</option><option value="haddock">Haddock</option></select></div>'
+      }
+      $("#addsection").html(html);
+    } else if ((size == 1) && ($('input[name=attendance]') == 'yes')) {
+      console.log("just one person");
+      html = '<div class="form-group row"><select name="entree1"><option value="chicken">Chicken</option><option value="haddock">Haddock</option></select></div>';
+      $("#addsection").html(html);
     }
   });
 </script>

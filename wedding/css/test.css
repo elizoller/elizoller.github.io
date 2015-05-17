@@ -152,3 +152,34 @@ p {
   font-weight:bold;
   line-height:1.5em;
 }
+.secondary {
+
+}
+.secondary .navbar-default {
+  background:#F5F5F5;
+  border:none;
+}
+.secondary .navbar-default .navbar-nav>li>a, .secondary .navbar-default .navbar-brand {
+  color: #000000;
+  font-size: 1.1em;
+  font-weight: bold;
+  /*font-family: 'Cousine';*/
+    font-family: "Libre Baskerville",Times, serif;
+
+}
+.secondary img {
+    border-radius:5px;
+}
+.secondary .page-2, .secondary .page-3, .email-alert {
+  display:none;
+}
+.secondary hr {
+  border-top:1px solid #000000;
+}
+.secondary textarea {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+	width: 100%;
+}

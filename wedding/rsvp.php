@@ -116,6 +116,7 @@ $total = $_POST[''];
 </div>
 </div>
 <!-- attach JavaScripts -->
+<script src="//maps.google.com/maps/api/js?sensor=true"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 <script src="js/test.js"></script>
  <!-- Plugin JavaScript -->

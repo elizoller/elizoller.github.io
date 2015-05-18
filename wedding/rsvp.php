@@ -94,10 +94,10 @@ $total = $_POST[''];
   </div>
 
   <div class="page-3">
-
-
-
-
+    <div class="form-group row">
+      <label for="comment" class="control=label col-sm-12">Would you like to leave a comment for the bride and groom?</label>
+      <textarea name="comment"></textarea>
+    </div>
   </div>
 </form>
 
@@ -142,8 +142,7 @@ $("#page-1-btn").click(function() {
     $(".rsvps").html("");
     var num_guests = $("select[name='party-total']").val();
     for (i=0; i < num_guests; i++) {
-      console.log(i);
-      var template = '<div class="form-group row"><div class="col-sm-6"><input type="text" class="form-control" placeholder="First Name" name="firstname'+i+'"></div><div class="col-sm-6"><input type="text" class="form-control" placeholder="Last Name" name="lastname'+i+'"></div></div><div class="form-group row"><div class="col-sm-12"><input type="checkbox" value="yes" name="under12"> Under the age of 12</div></div><div class="form-group row"><div class="col-sm-6"><label for="attendance'+i+'" class="control-label">Attending?</label><br/><select name="attendance'+i+'"><option value="0">Select one</option><option value="yes">Wouldn\'t miss it!</option><option value="no">Celebrating from afar</option></select></div><div class="col-sm-6"><label for="entree'+i+'" class="control-label">Entree Choice</label><br/><select name="entree'+i+'"><option value="0">Select one</option><option value="chicken">Chicken</option><option value="fish">Fish</option></select></div></div><div class="form-group row"><div class="col-sm-12"><textarea name="allergy'+i+'" placeholder="Please list all known food allergies and dietary restrictions (ie. gluten free, vegan, etc.)"></textarea></div></div><hr/>';
+      var template = '<div class="form-group row"><div class="col-sm-6"><input type="text" class="form-control" placeholder="First Name" name="firstname'+i+'"><div class="alert alert-warning alert-firstname">Please enter a first name.</div></div><div class="col-sm-6"><input type="text" class="form-control" placeholder="Last Name" name="lastname'+i+'"><div class="alert alert-warning alert-lastname">Please enter a last name.</div></div></div><div class="form-group row"><div class="col-sm-6"><label for="attendance'+i+'" class="control-label">Attending?</label><br/><select name="attendance'+i+'" class="attendance"><option value="0">Select one</option><option value="yes">Wouldn\'t miss it!</option><option value="no">Celebrating from afar</option></select><div class="alert alert-warning alert-attendance">Please select a attendance response.</div></div><div class="col-sm-6" class="entree"><label for="entree'+i+'" class="control-label">Entree Choice</label><br/><select name="entree'+i+'"><option value="0">Select one</option><option value="chicken">Chicken</option><option value="fish">Fish</option></select><div class="alert alert-warning alert-entree">Please select an entree choice.</div></div></div><div class="form-group row"><div class="col-sm-12"><input type="checkbox" value="yes" name="under12-'+i+'" class="form-control"><label for="under12-'+i+'"> Under the age of 12</label></div></div><div class="form-group row"><div class="col-sm-12"><textarea name="allergy'+i+'" placeholder="Please list all known food allergies and dietary restrictions (ie. gluten free, vegan, etc.)"></textarea></div></div><hr/>';
       $(".rsvps").append(template);
     }
   } else {
@@ -152,19 +151,36 @@ $("#page-1-btn").click(function() {
 });
 $("#page-2-btn-next").click(function() {
   var error = false;
-  //process to go to page 3 here
-  $(".alert-firstname").remove();
-  $(".alert-lastname").remove();
   $("input[name^='firstname']").each(function() {
     if ($(this).val() == "") {
       error = true;
-      $(this).after('<div class="alert alert-warning alert-firstname">Please enter a first name</div>');
+      $(this).siblings(".alert-firstname").show();
+    } else {
+      $(this).siblings(".alert-firstname").hide();
     }
   });
   $("input[name^='lastname']").each(function() {
     if ($(this).val() == "") {
       error = true;
-      $(this).after('<div class="alert alert-warning alert-lastname">Please enter a last name</div>');
+      $(this).siblings(".alert-lastname").show();
+    } else {
+      $(this).siblings(".alert-lastname").hide();
+    }
+  });
+  $("select[name^='attendance']").each(function() {
+    if ($(this).val() == "0") {
+      error = true;
+      $(this).siblings(".alert-attendance").show();
+    } else {
+      $(this).siblings(".alert-attendance").hide();
+    }
+  });
+  $("select[name^='entree']").each(function() {
+    if ($(this).val() == "0") {
+      error = true;
+      $(this).siblings(".alert-entree").show();
+    } else {
+      $(this).siblings(".alert-entree").hide();
     }
   });
   if (error == false) {
@@ -172,15 +188,28 @@ $("#page-2-btn-next").click(function() {
     $(".page-3").show();
   }
 });
-$("input[name='under12']").change(function() {
-  if (($this).val() == 'yes') {
-    alert("under 12");
-    $(this).sibling(".entree").hide();
-  }
-})
+// $("input[name='under12']").change(function() {
+//   console.log($(this).val());
+//   if (($this).val() == 'yes') {
+//     alert("under 12");
+//     $(this).siblings(".entree").hide();
+//   }
+// });
+// $("select[name^='attendance']").each(function() {
+//   $(this).change(function() {
+//     alert("attendance changed");
+//     if ($(this).val() == "no") {
+//       $(this).siblings(".entree").hide();
+//     }
+//   });
+// });
+// $(".attendance").change(function() {
+//   alert($(this).val());
+// });
 $("#page-2-btn-prev").click(function() {
   $(".page-2").hide();
   $(".page-1").show();
+  $(".email-alert").hide();
 });
 
 </script>

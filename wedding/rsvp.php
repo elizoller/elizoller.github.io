@@ -101,7 +101,7 @@ $total = $_POST[''];
       <textarea name="comment" rows="10"></textarea>
     </div>
     <btn class="btn btn-default" id="page-3-btn-prev"><< Back</btn>
-    <input type="submit" value="submit" class="btn btn-default" id="page-3-btn-next">Submit >></input>
+    <input type="submit" value="Submit >>" class="btn btn-default" id="page-3-btn-next">
   </div>
 </form>
 
@@ -137,7 +137,7 @@ $("#page-1-btn").click(function() {
     $(".rsvps").html("");
     var num_guests = $("select[name='party-total']").val();
     for (i=0; i < num_guests; i++) {
-      var template = '<div class="form-group row"><div class="col-sm-6"><input type="text" class="form-control" placeholder="First Name" name="firstname'+i+'"><div class="alert alert-warning alert-firstname">Please enter a first name.</div></div><div class="col-sm-6"><input type="text" class="form-control" placeholder="Last Name" name="lastname'+i+'"><div class="alert alert-warning alert-lastname">Please enter a last name.</div></div></div><div class="form-group row"><div class="col-sm-6"><label for="attendance'+i+'" class="control-label">Attending?</label><br/><select name="attendance'+i+'" class="attendance"><option value="0">Select one</option><option value="yes">Wouldn\'t miss it!</option><option value="no">Celebrating from afar</option></select><div class="alert alert-warning alert-attendance">Please select a attendance response.</div></div><div class="col-sm-6 under12"><label for="under12-'+i+'"><input type="checkbox" value="yes" name="under12-'+i+'" > Under the age of 12</label></div></div><div class="form-group row entree"><div class="col-sm-6"><label for="entree'+i+'" class="control-label">Entree Choice</label><br/><select name="entree'+i+'"><option value="0">Select one</option><option value="chicken">Chicken</option><option value="haddock">Haddock</option></select><div class="alert alert-warning alert-entree">Please select an entree choice.</div></div></div><div class="form-group row allergy"><div class="col-sm-12"><textarea name="allergy'+i+'" placeholder="Please list all known food allergies and dietary restrictions (ie. gluten free, vegan, etc.)"></textarea></div></div><hr/>';
+      var template = '<div class="rsvp-'+i+'>"<div class="form-group row"><div class="col-sm-6"><input type="text" class="form-control" placeholder="First Name" name="firstname'+i+'"><div class="alert alert-warning alert-firstname">Please enter a first name.</div></div><div class="col-sm-6"><input type="text" class="form-control" placeholder="Last Name" name="lastname'+i+'"><div class="alert alert-warning alert-lastname">Please enter a last name.</div></div></div><div class="form-group row"><div class="col-sm-6"><label for="attendance'+i+'" class="control-label">Attending?</label><br/><select name="attendance'+i+'" class="attendance"><option value="0">Select one</option><option value="yes">Wouldn\'t miss it!</option><option value="no">Celebrating from afar</option></select><div class="alert alert-warning alert-attendance">Please select a attendance response.</div></div><div class="col-sm-6 under12"><label for="under12-'+i+'"><input type="checkbox" value="yes" name="under12-'+i+'" > Under the age of 12</label></div></div><div class="form-group row entree"><div class="col-sm-6"><label for="entree'+i+'" class="control-label">Entree Choice</label><br/><select name="entree'+i+'"><option value="0">Select one</option><option value="chicken">Chicken</option><option value="haddock">Haddock</option></select><div class="alert alert-warning alert-entree">Please select an entree choice.</div></div></div><div class="form-group row allergy"><div class="col-sm-12"><textarea name="allergy'+i+'" placeholder="Please list all known food allergies and dietary restrictions (ie. gluten free, vegan, etc.)"></textarea></div></div><hr/></div>';
       $(".rsvps").append(template);
     }
     $("select[name^='attendance']").change(function() {
@@ -164,39 +164,31 @@ $("#page-1-btn").click(function() {
 });
 $("#page-2-btn-next").click(function() {
   var error = false;
-  $("input[name^='firstname']").each(function() {
-    if ($(this).val() == "") {
+  $('*[class^="rsvp-"]').each(function() {
+    var firstname = $(this).find("input[name^='firstname']");
+    var lastname = $(this).find("input[name^='lastname']");
+    var attendance = $(this).find("select[name^='attendance']");
+    var under12 = $(this).find("input[name^='under12']");
+    var entree = $(this).find("select[name^='entree']");
+    if (firstname.val() == "") {
       error = true;
-      $(this).siblings(".alert-firstname").show();
-    } else {
-      $(this).siblings(".alert-firstname").hide();
+      firstname.siblings(".alert-firstname").show();
     }
-  });
-  $("input[name^='lastname']").each(function() {
-    if ($(this).val() == "") {
+    if (lastname.val() == "") {
       error = true;
-      $(this).siblings(".alert-lastname").show();
-    } else {
-      $(this).siblings(".alert-lastname").hide();
+      lastname.siblings(".alert-lastname").show();
     }
-  });
-  $("select[name^='attendance']").each(function() {
-    if ($(this).val() == "0") {
+    if (attendance.val() == "0") {
       error = true;
-      $(this).siblings(".alert-attendance").show();
-    } else {
-      $(this).siblings(".alert-attendance").hide();
+      attendance.siblings(".alert-attendance").show();
     }
-  });
-  $("select[name^='entree']").each(function() {
-    if (($(this).val() == "0") && ($(this).parent(".form-group").siblings(".form-group").children(".under12").is(':checked') == false)) {
+    if ((attendance.val() == "yes") && (entree.val() == "0") && !under12.is(':checked')) {
       error = true;
-      $(this).siblings(".alert-entree").show();
-    } else {
-      $(this).siblings(".alert-entree").hide();
+      entree.siblings(".alert-entree").show();
     }
-  });
+  }
   if (error == false) {
+    $(".alert").hide();
     $(".page-2").hide();
     $(".page-3").show();
   }

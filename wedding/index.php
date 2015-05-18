@@ -238,16 +238,13 @@
   <!-- /footer -->
 
   <!-- attach JavaScripts -->
-  <script src="js/jquery-1.10.2.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
   <script src="//maps.google.com/maps/api/js?sensor=true"></script>
   <script src="js/test.js"></script>
-   <!-- Plugin JavaScript -->
-  <script src="js/classie.js"></script>
-
-  <!-- Custom Theme JavaScript -->
+  <script src="js/maps.js"></script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

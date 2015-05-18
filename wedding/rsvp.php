@@ -10,7 +10,7 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/test.css" rel="stylesheet" />
       <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville|Noto+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-      <script src="js/jquery-1.10.2.min.js"></script>
+      <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
       <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 </head>
 <body id="page-top" class="secondary">
@@ -98,10 +98,10 @@ $total = $_POST[''];
   <div class="page-3">
     <div class="form-group row">
       <label for="comment" class="control=label col-sm-12">Would you like to leave a comment for the bride and groom?</label>
-      <textarea name="comment"></textarea>
+      <textarea name="comment" rows="10"></textarea>
     </div>
     <btn class="btn btn-default" id="page-3-btn-prev"><< Back</btn>
-    <btn class="btn btn-default" id="page-3-btn-next">Submit >></btn>
+    <input type="submit" value="submit" class="btn btn-default" id="page-3-btn-next">Submit >></input>
   </div>
 </form>
 
@@ -116,13 +116,8 @@ $total = $_POST[''];
 </div>
 </div>
 <!-- attach JavaScripts -->
-<script src="//maps.google.com/maps/api/js?sensor=true"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 <script src="js/test.js"></script>
- <!-- Plugin JavaScript -->
-<script src="js/classie.js"></script>
-
-<!-- Custom Theme JavaScript -->
 <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -142,9 +137,27 @@ $("#page-1-btn").click(function() {
     $(".rsvps").html("");
     var num_guests = $("select[name='party-total']").val();
     for (i=0; i < num_guests; i++) {
-      var template = '<div class="form-group row"><div class="col-sm-6"><input type="text" class="form-control" placeholder="First Name" name="firstname'+i+'"><div class="alert alert-warning alert-firstname">Please enter a first name.</div></div><div class="col-sm-6"><input type="text" class="form-control" placeholder="Last Name" name="lastname'+i+'"><div class="alert alert-warning alert-lastname">Please enter a last name.</div></div></div><div class="form-group row"><div class="col-sm-6"><label for="attendance'+i+'" class="control-label">Attending?</label><br/><select name="attendance'+i+'" class="attendance"><option value="0">Select one</option><option value="yes">Wouldn\'t miss it!</option><option value="no">Celebrating from afar</option></select><div class="alert alert-warning alert-attendance">Please select a attendance response.</div></div><div class="col-sm-6 under12"><label for="under12-'+i+'"><input type="checkbox" value="yes" name="under12-'+i+'" > Under the age of 12</label></div></div><div class="form-group row"><div class="col-sm-6 entree"><label for="entree'+i+'" class="control-label">Entree Choice</label><br/><select name="entree'+i+'"><option value="0">Select one</option><option value="chicken">Chicken</option><option value="haddock">Haddock</option></select><div class="alert alert-warning alert-entree">Please select an entree choice.</div></div></div><div class="form-group row"><div class="col-sm-12"><textarea name="allergy'+i+'" placeholder="Please list all known food allergies and dietary restrictions (ie. gluten free, vegan, etc.)"></textarea></div></div><hr/>';
+      var template = '<div class="form-group row"><div class="col-sm-6"><input type="text" class="form-control" placeholder="First Name" name="firstname'+i+'"><div class="alert alert-warning alert-firstname">Please enter a first name.</div></div><div class="col-sm-6"><input type="text" class="form-control" placeholder="Last Name" name="lastname'+i+'"><div class="alert alert-warning alert-lastname">Please enter a last name.</div></div></div><div class="form-group row"><div class="col-sm-6"><label for="attendance'+i+'" class="control-label">Attending?</label><br/><select name="attendance'+i+'" class="attendance"><option value="0">Select one</option><option value="yes">Wouldn\'t miss it!</option><option value="no">Celebrating from afar</option></select><div class="alert alert-warning alert-attendance">Please select a attendance response.</div></div><div class="col-sm-6 under12"><label for="under12-'+i+'"><input type="checkbox" value="yes" name="under12-'+i+'" > Under the age of 12</label></div></div><div class="form-group row entree"><div class="col-sm-6"><label for="entree'+i+'" class="control-label">Entree Choice</label><br/><select name="entree'+i+'"><option value="0">Select one</option><option value="chicken">Chicken</option><option value="haddock">Haddock</option></select><div class="alert alert-warning alert-entree">Please select an entree choice.</div></div></div><div class="form-group row allergy"><div class="col-sm-12"><textarea name="allergy'+i+'" placeholder="Please list all known food allergies and dietary restrictions (ie. gluten free, vegan, etc.)"></textarea></div></div><hr/>';
       $(".rsvps").append(template);
     }
+    $("select[name^='attendance']").change(function() {
+      if ($(this).val() == "yes") {
+        $(this).parent(".col-sm-6").siblings(".under12").show();
+        $(this).parent(".col-sm-6").parent(".form-group").siblings(".entree").show();
+        $(this).parent(".col-sm-6").parent(".form-group").siblings(".allergy").show();
+      } else {
+        $(this).parent(".col-sm-6").siblings(".under12").hide();
+        $(this).parent(".col-sm-6").parent(".form-group").siblings(".entree").hide();
+        $(this).parent(".col-sm-6").parent(".form-group").siblings(".allergy").hide();
+      }
+    });
+    $("input[name^='under12']").change(function() {
+      if ($(this).is(':checked')) {
+        $(this).parent("label").parent(".col-sm-6").parent(".form-group").siblings(".entree").hide();
+      } else {
+        $(this).parent("label").parent(".col-sm-6").parent(".form-group").siblings(".entree").show();
+      }
+    });
   } else {
     $(".email-alert").show();
   }
@@ -176,7 +189,7 @@ $("#page-2-btn-next").click(function() {
     }
   });
   $("select[name^='entree']").each(function() {
-    if ($(this).val() == "0") {
+    if (($(this).val() == "0") && ($(this).parent(".form-group").siblings(".form-group").children(".under12").is(':checked') == false)) {
       error = true;
       $(this).siblings(".alert-entree").show();
     } else {
@@ -188,27 +201,17 @@ $("#page-2-btn-next").click(function() {
     $(".page-3").show();
   }
 });
-// $("input[name='under12']").change(function() {
-//   console.log($(this).val());
-//   if (($this).val() == 'yes') {
-//     alert("under 12");
-//     $(this).siblings(".entree").hide();
-//   }
-// });
 $("#page-2-btn-prev").click(function() {
   $(".page-2").hide();
   $(".page-1").show();
   $(".email-alert").hide();
 });
-$("select[name^='attendance']").change(function() {
-  alert("attendance changed");
-  if ($(this).val() == "no") {
-    $(this).siblings(".entree").hide();
-  }
+$("#page-3-btn-prev").click(function() {
+  $(".page-3").hide();
+  $(".page-2").show();
+  $(".alert").hide();
 });
-$( document ).ready(function() {
-    console.log( "ready!" );
-});
+
 </script>
 </body>
 </html>

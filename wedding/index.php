@@ -240,15 +240,14 @@
   <!-- attach JavaScripts -->
   <script src="js/jquery-1.10.2.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
   <script src="//maps.google.com/maps/api/js?sensor=true"></script>
   <script src="js/test.js"></script>
    <!-- Plugin JavaScript -->
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
   <script src="js/classie.js"></script>
-  <script src="js/cbpAnimatedHeader.js"></script>
 
   <!-- Custom Theme JavaScript -->
-  <script src="js/agency.js"></script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -258,33 +257,6 @@
   ga('create', 'UA-45145656-1', 'auto');
   ga('send', 'pageview');
 
-</script>
-<script type="text/javascript">
-  $('input[name=attendance]').click(function() {
-    if ($(this).val() == "yes") {
-      console.log("attending");
-    }
-    if ($(this).val() == "no") {
-      console.log("not attending");
-    }
-    $("#partysize").removeAttr("disabled");
-  });
-  $("#partysize").change(function() {
-    size = $(this).val();
-    size = parseInt(size);
-    if ((size > 1) && ($('input[name=attendance]').val() == 'yes')) {
-      html = ''
-      for (i = 1; i < size; i++) {
-        console.log(i);
-        html = html + '<div class="form-group row"><label for="firstname['+i+']" class="col-sm-1">First Name</label><input name="firstname['+i+']" class="col-sm-1"><label for="lastname['+i+']" class="col-sm-1">Last Name</label><input name="lastname['+i+']" class="col-sm-1"><label for="entree['+i+']" class="col-sm-1">Entree Choice</label><select class="col-sm-1" name="entree['+i+']"><option value="chicken">Chicken</option><option value="haddock">Haddock</option></select></div>'
-      }
-      $("#addsection").html(html);
-    } else if ((size == 1) && ($('input[name=attendance]') == 'yes')) {
-      console.log("just one person");
-      html = '<div class="form-group row"><select name="entree1"><option value="chicken">Chicken</option><option value="haddock">Haddock</option></select></div>';
-      $("#addsection").html(html);
-    }
-  });
 </script>
 </body>
 </html>

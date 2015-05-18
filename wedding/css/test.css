@@ -170,7 +170,7 @@ p {
 .secondary img {
     border-radius:5px;
 }
-.secondary .page-2, .secondary .page-3, .secondary .email-alert, .secondary .alert-entree, .secondary .alert-attendance, .secondary .alert-firstname, .secondary .alert-lastname {
+.secondary .page-2, .secondary .page-3, .secondary .email-alert, .secondary .alert-entree, .secondary .alert-attendance, .secondary .alert-firstname, .secondary .alert-lastname, .secondary .under12, .secondary .entree {
   display:none;
 }
 .secondary hr {

@@ -160,7 +160,7 @@
       <div class="row">
         <div class="col-sm-12 text-center">
           <h2 class="text-center">RSVP</h2> <hr />
-          <h4>We hope you’ll be joining in on the fun! Please RSVP below. If you’re having trouble, please give the Bride or Groom a call!</h4>
+          <h4>We hope you’ll be joining in on the fun! Please RSVP below. If you’re having trouble, please <a href="#contact">contact us</a>!</h4>
           <br/>
           <a class="btn btn-success btn-lg clearfix" href="rsvp.php">RSVP</a>
         </div>

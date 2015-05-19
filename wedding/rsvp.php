@@ -25,18 +25,18 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand page-scroll" href="#">Gina and Eli's Wedding</a>
+        <a class="navbar-brand page-scroll" href="index.php">Gina and Eli's Wedding</a>
       </div>
 
       <div class="collapse navbar-collapse" id="navbar-collapse-main">
         <ul class="nav navbar-nav navbar-right">
-          <li class="hidden"><a href="#home" class="page-scroll">Home</a></li>
-          <li><a href="#about" class="page-scroll">About Us</a></li>
-          <li><a href="#bigday" class="page-scroll">Wedding Day</a></li>
-          <li><a href="#travel" class="page-scroll">Travel</a></li>
-          <li><a href="#rsvp" class="page-scroll">RSVP</a></li>
-          <li><a href="#registry" class="page-scroll">Registry</a></li>
-          <li><a href="#contact" class="page-scroll">Contact</a></li>
+          <li class="hidden"><a href="index.php#home" class="page-scroll">Home</a></li>
+          <li><a href="index.php#about" class="page-scroll">About Us</a></li>
+          <li><a href="index.php#bigday" class="page-scroll">Wedding Day</a></li>
+          <li><a href="index.php#travel" class="page-scroll">Travel</a></li>
+          <li><a href="index.php#rsvp" class="page-scroll">RSVP</a></li>
+          <li><a href="index.php#registry" class="page-scroll">Registry</a></li>
+          <li><a href="index.php#contact" class="page-scroll">Contact</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
@@ -48,20 +48,22 @@
           <h1>RSVP</h1>
 
 <?php
-if (isset($_POST['submit'])) {
-  echo "The form has been submitted";
-  print_r($_POST);
+if('POST' == $_SERVER['REQUEST_METHOD']) {
+  $message = "An RSVP has been submitted for your wedding.\r\n";
   foreach ( $_POST as $key => $value )
   {
-    echo $key . " : " . $value;
+    $message .= $key . " : " . $value . "\r\n";
   }
+  mail("zoller.eli@gmail.com", "New RSVP to Wedding", $message);
 ?>
-<h2 class="alert alert-success">Thanks for RSVPing to our Wedding!</h2>
+<p class="alert alert-success">Your RSVP was successfully submitted</p>
+<p>Thanks for RSVPing!</p>
 <p><a href="index.php">Check out more details about the day</a></p>
+</div>
 <?php
 } else {
 ?>
-<form role="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+<form role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
   <div class="page-1">
     <p><small>To begin your RSVP, please enter your email address (or phone number if you don't have an email address) and the total number in your party. Please indicate both acceptances and regrets</small></p>
     <div class="form-group row">
@@ -110,14 +112,13 @@ if (isset($_POST['submit'])) {
 </form>
 
 </div>
-
+<?php
+}
+?>
 <div class="col-sm-6">
   <br/>
   <img src="img/bw5.jpg" width="100%">
 </div>
-<?php
-}
-?>
 </div>
 </div>
 </div>

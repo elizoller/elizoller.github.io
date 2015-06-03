@@ -61,7 +61,7 @@
       <img src="img/ginabw.png" alt="Gina">
       <div class="caption">
       <h3>Gina</h3>
-      <p>Gina is an artsy girl. By day she is a Spanish teacher writing lesson plans and taking cellphones hostage, by night she likes to paint and go to the movies. She loves sundresses and rarely matches her socks. Some favorite foods are chicken pot pie, asparagus, calmari, and chicken salad on crunchy lettuce wraps. She feels more blessed than words could describe that she found her adventuring soul-mate, Eli.</p>
+      <p>Gina is an artsy girl. By day she is a Spanish teacher writing lesson plans and taking cellphones hostage, by night she likes to paint and go to the movies. She loves sundresses and rarely matches her socks. Some favorite foods are chicken pot pie, asparagus, calamari, and chicken salad on crunchy lettuce wraps. She feels more blessed than words could describe that she found her adventuring soul-mate, Eli.</p>
     </div>
     </div> <!--.thumbnail-->
     </div> <!--.end col-->
@@ -103,7 +103,7 @@
       <div class="row">
         <div class="col-sm-10 col-sm-offset-1 text-center">
           <h5>After Party</h5>
-          <p>Join us for a casual gathering at the Hilton Garden Inn for pizza and socializing! We'll be in the lobby near the hotel's bar from 6-9pm after the wedding. Hope to see you there!</p>
+          <p>Join us for a casual gathering at the Hilton Garden Inn for pizza and socializing! We'll be in the lobby near the hotel's bar from 5-7pm after the wedding. Hope to see you there!</p>
         </div>
       </div>
     </div>
@@ -119,7 +119,7 @@
     <div class="container">
       <div class="row">
         <h3>Where to Stay</h3>
-        <p>Both hotels are about 20 minutes from the venue. The Hilton has an in-house restaurant and bar and is where we'll be staying. The Hampton is closer to the “after party” and offers a free hot breakfast beginning at 6:30am.</p>
+        <p>Both hotels are about 20 minutes from the venue. The Hilton has an in-house restaurant and bar and is where we'll be staying. The Hampton is less expensive and offers a free hot breakfast beginning at 6:30am. The hotels are only about 20 minutes apart so no matter which you choose, you won't be far from the after party (at the Hilton).</p>
         <div class="col-sm-6">
           <div class="panel panel-default">
             <div class="panel-heading">
@@ -129,7 +129,7 @@
                <img src="img/hilton.jpg" /><br/>
                <p>Single King- $159</p>
                <p>Double Queen- $159</p>
-               <p><a href="http://www.devenscommon.hgi.com">Book here</a> with group code LZWB</p>
+               <p><a href="http://www.devenscommon.hgi.com" target="_blank">Book here</a> with group code LZWB</p>
             </div>
           </div>
         </div>
@@ -143,7 +143,7 @@
                <p>Single King- $119</p>
                <p>Double Queen- $119</p>
                <p>King Studio Suite- $129</p>
-               <p><a href="http://hamptoninn3.hilton.com/en/hotels/massachusetts/hampton-inn-and-suites-westford-chelmsford-BOSWFHX/index.html">Book here</a> with group code LZW</p>
+               <p><a href="http://hamptoninn3.hilton.com/en/hotels/massachusetts/hampton-inn-and-suites-westford-chelmsford-BOSWFHX/index.html" target="_blank">Book here</a> with group code LZW</p>
             </div>
           </div>
         </div>
@@ -162,7 +162,7 @@
           <h2 class="text-center">RSVP</h2> <hr />
           <h4>We hope you’ll be joining in on the fun! Please RSVP below. If you’re having trouble, please <a href="#contact">contact us</a>!</h4>
           <br/>
-          <a class="btn btn-success btn-lg clearfix" href="rsvp.php">RSVP</a>
+          <a class="btn btn-success btn-lg clearfix" href="rsvp.php"  target="_blank">RSVP</a>
         </div>
       </div>
     </div>
@@ -178,13 +178,13 @@
           <br/>
           <p class="clearfix col-sm-8 col-sm-offset-2">We’ve been nesting together since 2011, but you’ll see that our registry below has the “wish list” items we haven’t set up house with.</p>
           <br/><br/><br/>
-          <a class="btn btn-info btn-lg clearfix" href="http://www.myregistry.com/public/Gina-Longstreet-Eli-Zoller">Registry</a>
+          <a class="btn btn-info btn-lg clearfix" href="http://www.myregistry.com/public/Gina-Longstreet-Eli-Zoller" target="_blank">Registry</a>
           <br/>
           <br/>
           <br/>
           <p class="col-sm-8 col-sm-offset-2">Feel like sending us on an adventure instead? We’re incredibly lucky to be spending our “Luna de Miel” (honeymoon) in Walt Disney World and on a Disney Cruise! Check out this registry for fun ways to help us splurge.</p>
           <br/>
-          <a class="btn btn-warning btn-lg clearfix" href="http://disney.honeymoonwishes.com/Honeymoon-Registry-256909-Walt-Disney-World-Resort-Gina-Longstreet-Eli-Zoller.html">Honeymoon Registry</a>
+          <a class="btn btn-warning btn-lg clearfix" href="http://disney.honeymoonwishes.com/Honeymoon-Registry-256909-Walt-Disney-World-Resort-Gina-Longstreet-Eli-Zoller.html" target="_blank">Honeymoon Registry</a>
         </div>
       </div>
     </div>

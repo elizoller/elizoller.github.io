@@ -123,32 +123,55 @@
         <div class="col-sm-6">
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h2 class="panel-title">Hilton Garden Inn- Devens, MA</h2>
+              <h2 class="panel-title"><a href="http://hiltongardeninn3.hilton.com/en/hotels/massachusetts/hilton-garden-inn-devens-common-ORHDCGI/index.html" target="_blank">Hilton Garden Inn- Devens, MA</a></h2>
             </div>
             <div class="panel-body">
                <img src="img/hilton.jpg" /><br/>
                <p>Single King- $159</p>
                <p>Double Queen- $159</p>
-               <p><a href="http://www.devenscommon.hgi.com" target="_blank">Book here</a> with group code LZWB</p>
+               <p><a href="http://www.devenscommon.hgi.com" target="_blank">Book here</a> with group code LZWB or call (978) 772-0600</p>
             </div>
           </div>
         </div>
         <div class="col-sm-6">
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h2 class="panel-title">Hampton Inn- Westford, MA</h2>
+              <h2 class="panel-title"><a href="http://hamptoninn3.hilton.com/en/hotels/massachusetts/hampton-inn-and-suites-westford-chelmsford-BOSWFHX/index.html" target="_blank">Hampton Inn- Westford, MA</a></h2>
             </div>
             <div class="panel-body">
                <img src="img/hampton.jpg" /><br/>
-               <p>Single King- $119</p>
-               <p>Double Queen- $119</p>
+               <p>Single King/Double Queen- $119</p>
                <p>King Studio Suite- $129</p>
-               <p><a href="http://hamptoninn3.hilton.com/en/hotels/massachusetts/hampton-inn-and-suites-westford-chelmsford-BOSWFHX/index.html" target="_blank">Book here</a> with group code LZW</p>
+               <p><a href="http://hamptoninn3.hilton.com/en/hotels/massachusetts/hampton-inn-and-suites-westford-chelmsford-BOSWFHX/index.html" target="_blank">Book here</a> with group code LZW or call (978) 392-1555</p>
+               <div class="alert alert-warning">Our room block closes on Sept. 12. Please book before then to secure the discounted rate.</div>
             </div>
           </div>
         </div>
         <h3>Become a Local</h3>
         <p>We know that a lot of our friends and family are traveling across states to celebrate with us, check out the links below for some good eats and must sees in the area! Interested in making a longer trip out of it? Let us know if you’d like some info on the greater Boston area, we’re happy to share our experiences with you!</p>
+        <br/>
+        <div class="row">
+          <div class="col-sm-6">
+            <h4>Local Eateries</h4>
+            <dl>
+              <dt><a href="http://evvivacucina.com/" target="_blank">Evviva Cucina</a></dt><dd>Scratch made pizzas, pastas, GF friendly<br/>7 Cornerstone Square Westford, MA</dd>
+              <dt><a href="http://burtonsgrill.com/" target="_blank">Burtons Grill</a></dt><dd>Upscale bar and grille with extensive GF menu<br/>1 Cornerstone Square Westford, MA</dd>
+              <dt><a href="http://www.bixbiterestaurant.com/" target="_blank">BixBite</a></dt><dd>Serving up New England comfort food and a big breakfast menu<br/>175 Littleton Road Westford, MA</dd>
+              <dt><a href="http://britishbeer.com/westford/" target="_blank">British Beer Company</a></dt><dd>Wide selection of craft beers and global eats<br/>149 Littleton Road Westford, MA</dd>
+              <dt><a href="http://www.devensgrill.com/" target="_blank">Devens Grill</a></dt><dd>A family friendly spot serving up brunch, lunch, and dinner<br/>4 Ryans Way Devens, MA</dd>
+            </dl>
+          </div>
+          <div class="col-sm-6">
+            <h4>Things to Do</h4>
+            <dl>
+              <dt><a href="http://www.gibbethillfarm.com/visiting-the-farm/trails/" target="_blank">Gibbet Hill Trails</a></dt><dd>Surrounding the Barn, there are plenty of trails to wander around and take in the beautiful trees. </dd>
+              <dt><a href="http://www.mass.gov/eea/agencies/dcr/massparks/region-central/nashua-river-rail-trail.html" target="_blank">Nashua River Rail Trail</a></dt><dd>11 miles of paved trails through Groton and the surrounding area. Great for walking, biking, and horseback riding.</dd>
+              <dt><a href="http://autumnhillsorchard.com/" target="_blank">Autumn Hills Orchard</a></dt><dd>Pick your own apples and other fruit at this working orchard.</dd>
+              <dt><a href="http://www.nashobapaddler.com/" target="_blank">Nashoba Paddler</a></dt><dd>Rent kayaks or canoes and explore the Nashua River.</dd>
+              <dt>Take a ride!</dt><dd>There are lots of places within an hours drive from Groton. We highly recommend <a href="http://www.tripadvisor.com/Attractions-g60954-Activities-Salem_Massachusetts.html" target="_blank">Salem, MA</a>, <a href="https://www.osv.org">Old Sturbridge Village</a>, and of course, <a href="http://www.tripadvisor.com/Attractions-g60745-Activities-Boston_Massachusetts.html" target="_blank">Boston</a>! </dd>
+            </dl>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -160,9 +183,9 @@
       <div class="row">
         <div class="col-sm-12 text-center">
           <h2 class="text-center">RSVP</h2> <hr />
-          <h4>We hope you’ll be joining in on the fun! Please RSVP below. If you’re having trouble, please <a href="#contact">contact us</a>!</h4>
+          <h4>We hope you’ll be joining in on the fun! The RSVP has closed. If you need to reach us for any reason, please <a href="#contact">contact us</a>!</h4>
           <br/>
-          <a class="btn btn-success btn-lg clearfix" href="rsvp.php"  target="_blank">RSVP</a>
+          <!--<a class="btn btn-success btn-lg clearfix" href="rsvp.php"  target="_blank">RSVP</a>-->
         </div>
       </div>
     </div>
@@ -232,7 +255,7 @@
   <!-- footer -->
   <footer>
     <div class="container">
-      <p class="text-right">Copyright &copy; Eli Zoller 2014</p>
+      <p class="text-right">Copyright &copy; Eli Zoller 2015</p>
     </div>
   </footer>
   <!-- /footer -->

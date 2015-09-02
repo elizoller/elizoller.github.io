@@ -130,6 +130,7 @@
                <p>Single King- $159</p>
                <p>Double Queen- $159</p>
                <p><a href="http://www.devenscommon.hgi.com" target="_blank">Book here</a> with group code LZWB or call (978) 772-0600</p>
+               <div class="alert alert-warning">Our room block closes on Sept. 9. Please book before then to secure the discounted rate.</div>
             </div>
           </div>
         </div>

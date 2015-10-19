@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>The DRS Project Toolkit: A Scalable Model for Digital Projects</title>
+
+		<meta name="author" content="Eli Zoller">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+		<style>
+		#ex0 div div, #ex1 div div, #ex2 div div, #ex3 div div, #ex4 div div, #ex5 div div {
+			display:block;margin-left:auto;margin-right:auto;
+		}
+		.google-visualization-table {
+			color:#000000;
+		}
+		</style>
+		<script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['corechart, table']}]}"></script>
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>The DRS Project Toolkit:</h1>
+					<h2>A Scalable Model for Digital Projects</h2>
+					<h3>Northeastern University Libraries</h3>
+					<p>
+						<small>Presented by Sarah Sweeney and Eli Zoller</small>
+					</p>
+				</section>
+
+				<section>
+					<h3>1. DRS</h3>
+					<h3>2. DRS Project Toolkit</h3>
+					<h3>3. DRS Project Toolkit Pilot</h3>
+					<h3>4. DRS API</h3>
+					<h3>5. DRS + Wordpress</h3>
+					<h3>6. Lessons Learned and What's Next</h3>
+				</section>
+
+				<section>
+					<section>
+						<h2>Digital Scholarship Group <small>DSG</small></h2>
+						<!-- <img src="images/binary.jpg" style="display:inline;text-align:left;width:40%;margin-right:5%"/><img src="images/scholar.jpg" style="display:inline;text-align:right;width:40%;margin-left:5%;"/> -->
+					</section>
+					<section>
+						<div style="width:40%;margin-right:5%;display:inline-block;">
+							<h3>DRS Project Toolkit Team</h3>
+							<ul style="font-size:50%;">
+								<li>Param Ajmera, Graduate Assistant (?)</li>
+								<li>David Cliff, Senior Digital Library Developer</li>
+								<li>Colleen Curtis, Undergraduate Assistant (?)</li>
+								<li>Dave Decamp, Graduate Assistant</li>
+								<li>Julia Flanders, Director, Digital Scholarship Group</li>
+								<li>Abbie Levesque, Digital Scholarship Group Coordinator</li>
+								<li>Jim McGrath, Digital Scholarship Group Coordinator</li>
+								<li>Greg Palermo, Graduate Assistant (?)</li>
+								<li>Amanda Rust, Assistant Director, Digital Scholarship Group</li>
+								<li>Sarah Sweeney, Digital Repository Manager</li>
+								<li>Patrick Yott, Associate Dean, Digital Strategies and Services</li>
+								<li>Eli Zoller, Web Developer and Designer</li>
+							</ul>
+						</div>
+						<div style="width:40%;margin-left:5%;display:inline-block">
+							<h3>Pilot Project Timeline</h3>
+							<ul style="font-size:50%;">
+								<li>October 2014, Toolkit planning begins</li>
+								<li>February 2015, Call for Proposals</li>
+								<li>March 2015, Work Spec</li>
+								<li>April 2015, Project Selection</li>
+								<li>May 2015, Project work begins, API Development begins, Wordpress Development begins</li>
+								<li>August 2015, Alpha testing</li>
+								<li>October 2015, First projects receive their toolkit site</li>
+							</ul>
+						</div>
+					</section>
+					<section>
+						<h2>DRS Project Toolkit Goals</h2>
+						<ul>
+							<li>Develop a lightweight and sustainable model for preserving and displaying/distributing project materials.</li>
+							<li>Provide Northeastern projects with a low-barrier customized website to share project work.</li>
+							<li>Support Northeastern projects by preserving project materials in the DRS.</li>
+							<li>Encourage collaborative development between Toolkit sites.</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Digital Repository Service <small>DRS</small></h2>
+						<img src="images/DRS_Laptop.jpg" style="max-height:80%;">
+						<a href="http://repository.library.northeastern.edu">http://repository.library.northeastern.edu</a>
+					</section>
+					<section>
+						<h2>Digital Repository Service <small>DRS</small></h2>
+						<img src="images/search_result_sample.png" style="max-height:80%;">
+						<a href="http://repository.library.northeastern.edu">http://repository.library.northeastern.edu</a>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>DRS Project Toolkit</h2>
+					</section>
+					<section>
+						<h2>Stakeholder Input</h2>
+						<h4>Suggested Features</h4>
+						<ul style="font-size:50%;">
+							<li>Faceted full text search</li>
+							<li>Visualizations, particularly maps and timelines</li>
+							<li>Downloads</li>
+							<li>Sharing, including citations, social media, and object embedding</li>
+							<li>Easily interpreted data feed (i.e. JSON, CSV, RDF, XML)</li>
+							<li>Credit pages for project creators and curators</li>
+							<li>Metrics</li>
+							<li>Exhibits and/or galleries</li>
+							<li>Support for objects that are not stored in the DRS</li>
+							<li>Two-way syncing data between the web publishing tool and the DRS</li>
+							<li>Annotations</li>
+							<li>XML-aware search</li>
+						</ul>
+						<br/>
+						<h4>Concerns</h4>
+						<ul style="font-size:50%;">
+							<li>Depreciating tools: what happens when Wordpress and Omeka are no longer popular?</li>
+							<li>Redundant or repetitive work: project administrators don’t want to maintain digital objects in two places, the DRS and in the web publishing site.</li>
+						</ul>
+					</section>
+					<section>
+						<h2>DRS Project Toolkit Feature Set</h2>
+						<ul>
+							<li>Search targeted DRS content</li>
+							<li>Browse targeted DRS content</li>
+							<li>Facets to refine search and browse results</li>
+							<li>Download options for DRS content</li>
+							<li>Support for map and timeline visualizations</li>
+							<li>Exhibits and/or galleries</li>
+							<li>Support for non-DRS content</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Toolkit Design</h2>
+
+
+					</section>
+					<section>
+						<h2>Selecting the Pilot Projects</h2>
+						<img src="images/DRSplus_RF.jpef"/>
+
+					</section>
+					<section>
+						<h2>Workflow</h2>
+						[insert trello image]
+						<ul>
+							<li>Intake interview</li>
+							<li>Content Review</li>
+							<li>File Preparation</li>
+							<li>Toolkit Training and Instruction</li>
+							<li>Wordpress installation</li>
+							<li>Pre-Launch Review</li>
+							<li>Launch</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>DRS API</h2>
+						<h5>Written by David Cliff, Lead Digital Library Developer at Northeastern University Libraries</h5>
+					</section>
+					<section>
+						<h3>Single Item</h3>
+						<pre>/api/v1/search/[item pid]</pre>
+						<img src="images/api-single-item.png" />
+						<aside class="notes">
+							retrieves MODS, derivatives, and master files
+						</aside>
+					</section>
+					<section>
+						<h3>Collection Export</h3>
+						<pre>/api/v1/export/[collection pid]</pre>
+						<img src="images/api-export.png" />
+						<aside class="notes">
+							retrieves MODS, derivatives, and master files for all items that are children of collection
+						</aside>
+					</section>
+					<section>
+						<h3>Scoped Search</h3>
+						<pre>/api/v1/search/[collection pid]</pre>
+						<img src="images/api-search.png" />
+						<aside class="notes">
+						retrieves Blacklight search results scoped with collection, accepts facets and keywords
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>DRS + Wordpress</h2>
+						<aside class="notes">
+							a plugin for functionality and a child theme from an existing wordpress theme (quest) which provides many customization options and additional ones related to the drs content specifically
+						</aside>
+					</section>
+					<section>
+						<h3>Search</h3>
+						<img src="images/wp-search.png" />
+						<aside class="notes">
+							Sets up a search page with list style and overrides wordpress search boxes with the search that hits the DRS API. Renders DRS results prominently and wordpress content minimally. Exposes facets and uses AJAX to update the page with fresh DRS results.
+						</aside>
+					</section>
+					<section>
+						<h3>Browse</h3>
+						<img src="images/wp-browse.png" />
+						<aside class="notes">
+							Sets up a browse page with a tiled styling. Hits the DRS API every time to get fresh results
+						</aside>
+					</section>
+					<section>
+						<h3>Collection Browse</h3>
+						<img src="images/wp-collections.png" />
+						<aside class="notes">
+							Allows users to browse by sub-collections of the collection entered in the settings page
+						</aside>
+					</section>
+					<section>
+						<h3>Single Item</h3>
+						<img src="wp-single-item.png" />
+						<aside class="notes">
+							Provides a single item page retrieved dynamically from the DRS API with thumbnail or embedded media, MODS, and downloads of derivatives
+						</aside>
+					</section>
+					<section>
+						<h3>Admin Settings</h3>
+						<img src="images/wp-admin.png" />
+						<aside class="notes">
+							Allows users to input collection URL and then search/browse works automatically, allows customization of metadata on search/browse/collection pages and page titles
+						</aside>
+					</section>
+					<section>
+						<h3>Exhibits</h3>
+						<h5>Page Builder and Custom Shortcodes</h5>
+						<ul>
+							<li>Sliding gallery</li>
+							<li>Tiled gallery</li>
+							<li>Media playlist</li>
+							<li>Single item</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Sliding Gallery</h3>
+						<img src="images/sliding.png"/>
+					</section>
+					<section>
+						<h3>Tiled Gallery</h3>
+						<img src="images/tiled.png"/>
+					</section>
+					<section>
+						<h3>Media Playlist</h3>
+						<img src="images/media.png"/>
+					</section>
+					<section>
+						<h3>Single Item</h3>
+						<img src="images/single.png"/>
+					</section>
+					<section>
+						<h3>Live Demo</h3>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Challenges and Lessons Learned</h2>
+						<ul>
+							<li>Managing Expectations</li>
+							<li>CSS Customizations</li>
+							<li>Wordpress Media Gallery</li>
+							<li>University Branding</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>What's Next for the DRS Project Toolkit</h2>
+						<ul>
+							<li>Review and Launch</li>
+							<li>Arader, Archives, and Sadow</li>
+							<li>Installations</li>
+							<li>Catskills DMC Studios, and Holocaust Awareness Committee</li>
+							<li>Maintenance and Updates</li>
+							<li>Annual Check-in and 2016 Call for Proposals</li>
+							<li>Toolkit Improvements</li>
+							<li>Improved integration with non-DRS content</li>
+							<li>Sets integration</li>
+							<li>Customizing the item display</li>
+							<li>TEI and annotations</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Thanks!</h2>
+						<h4>Contact</h4>
+						<p>Sarah Sweeney, sj.sweeney@neu.edu</p>
+						<p>Eli Zoller, e.zoller@neu.edu</p>
+						<h4>More information</h4>
+						<a href="http://dsg.neu.edu/drs-project-toolkit">http://dsg.neu.edu/drs-project-toolkit</a>
+						<a href="">DLF Blog Post</a>
+						<h4>Questions for You</h4>
+						<ol>
+							<li>How have others sought to support project publishing and object storage?</li>
+							<li>What is your criteria for project selection?</li>
+							<li>What has been your experience with Wordpress for digital project work?</li>
+							<li>Have others experienced issues with supporting Wordpress over time?</li>
+						</ol>
+						<h5>DRS: <a href="http://repository.library.northeastern.edu">repository.library.northeastern.edu</a></h5>
+						<h5>DRS Github: <a href="http://github.com/NEU-Libraries/cerberus">github.com/NEU-Libraries/cerberus</a></h5>
+						<h5>DRS Toolkit Plugin: <a href="http://github.com/NEU-Libraries/drs-toolkit-wp-plugin">github.com/NEU-Libraries/drs-toolkit-wp-plugin</a></h5>
+						<h5>DRS Toolkit Theme: <a href="http://github.com/NEU-Libraries/drs-toolkit-wp-theme">github.com/NEU-Libraries/drs-toolkit-wp-theme</a></h5>
+					</section>
+				</section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+
+	</body>
+</html>

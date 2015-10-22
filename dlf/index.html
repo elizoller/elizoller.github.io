@@ -329,13 +329,39 @@
 						</ul>
 						<aside class="notes">
 							Before we started work on the Hydra API that would feed DRS data to the Toolkit sites, we wanted to know precisely what functionality was needed to make a good digital project site.
-							We met in December with representatives from a few DSG projects and partners, including Our Marathon, the Early Caribbean Digital Archive, University Archives and Special collections, as well as with students from public history who work a lot with digital project publishing. We discussed what they, as digital scholars, need from an integrated digital publishing site like the one we were about to develop. We identified a few common needs from the group, including faceted searching, visualizations, sharing, downloading, and galleries or exhibits.
-							A few features were suggested during this meeting that were worth exploring in the future, but were out of scope for the pilot project, including two-way data syncing between the publishing tool and the DRS, the ability to annotate files, and XML-aware searching.
-							We synthesized the outcomes of the stakeholder meeting into a list of features, which would become the first set of tools in the Toolkit, and our discussion helped inform our decisions about the Toolkit spec and project workflows.
+
+							We met in December with representatives from a few DSG projects and partners, including representatives from:
+							<ul>
+							<li>Our Marathon: the Boston Bombing Digital Archive </li>
+							<li>the Early Caribbean Digital Archive,</li>
+							<li>University Archives and Special collections,</li>
+							<li>students from public history who work a lot with digital project publishing.</li>
+						</ul>
+							We discussed what they, as digital scholars, need from an integrated digital publishing site like the one we were about to develop.
+
+							We identified a few common needs from the group, including:
+							<ul>
+							<li>faceted searching,</li>
+							<li>visualizations,</li>
+							<li>sharing,</li>
+							<li>downloading,</li>
+							<li>and galleries or exhibits.</li>
+						</ul>
+
+							A few features were suggested during this meeting that were worth exploring in the future, but were out of scope for the pilot project, including:
+							<ul>
+							<li>two-way data syncing between the publishing tool and the DRS</li>
+							<li>the ability to annotate files</li>
+							<li>XML-aware searching.</li>
+						</ul>
+							We synthesized the outcomes of the stakeholder meeting into a list of features, which would become the first set of tools in the Toolkit,
+
+							and our discussion helped inform our decisions about the Toolkit spec and project workflows.
+
 						</aside>
 					</section>
 					<section>
-						<h2>Feature Set</h2>
+						<h2>Toolkit Design</h2>
 						<div style="width:45%;display:inline-block;float:left">
 							<h4>API</h4>
 							<ul>
@@ -356,9 +382,27 @@
 							</ul>
 						</div>
 						<aside class="notes">
-							I'll let Eli describe the API in more detail, but at this point we knew that, in order to support the Toolkit features, the API would need to enable browsing and keyword searching of targeted DRS content; filtering of result using facets; sorting of results; and displaying two different metadata levels, a brief display for browse and search results, and a full metadata display for item pages.
+							I'll let Eli describe the API in more detail,
+
+							but at this point we knew that, in order to support the Toolkit features, the API would need to enable:
+							<ul><li>browsing and keyword searching of targeted DRS content;</li>
+							<li>filtering of result using facets;</li>
+							<li>sorting of results;</li>
+							<li>and displaying two different metadata levels, a brief display for browse and search results, and a full metadata display for item pages.</li></ul>
+
 							We also needed to decide what web publishing tools we were willing to support for the Toolkit.
-							We originally planned on supporting Drupal, Omeka, and Wordpress, but quickly decided that Drupal would be too cumbersome. Omeka is very popular with digital scholars but we realized that there were few advantages to supporting both Omeka and Wordpress during the pilot project, especially since none of our inaugural projects expressed a preference for one over the other. So, to simplify Toolkit development for the pilot, we decided to implement Toolkit sites using Wordpress only.
+
+							We originally planned on supporting Drupal, Omeka, and Wordpress, but quickly decided that Drupal would be too cumbersome.
+
+							Omeka is very popular with digital scholars but we realized that there were few advantages to supporting both Omeka and Wordpress during the pilot project,
+
+							especially since none of our pilot projects expressed a preference for one over the other.
+
+							So, to simplify Toolkit development for the pilot, we decided to implement Toolkit sites using Wordpress only.
+
+							What has been your experience with Wordpress for digital project work?
+
+							Have others experienced issues with supporting Wordpress over time?
 						</aside>
 					</section>
 				</section>
@@ -367,7 +411,11 @@
 					<section>
 						<h2>Pilot Projects</h2>
 						<aside class="notes">
-							At this point we had a roadmap for development, but no projects to develop for. The library had already been working with 3 projects that could benefit from a customized display for DRS content, so we decided to include those projects in the pilot. Those projects include:
+							At this point we had a roadmap for development, but no projects to develop for.
+
+							The library had already been working with 3 projects that could benefit from a customized display for DRS content, so we decided to include those projects in the pilot.
+
+							Those three projects include:
 						</aside>
 					</section>
 					<section>
@@ -375,7 +423,9 @@
 						<p>Tools need: Exhibit</p>
 						<img src="images/arader_avian.png" class="stretch"/>
 						<aside class="notes">
-							The Library’s "Picturing the World" gallery is a collection of maps, watercolors, and Audubon prints donated to the library by Graham Arader. There are 118 high resolution TIFFs, already in the DRS, and all fully cataloged.
+							The Library’s "Picturing the World" gallery is a collection of maps, watercolors, and Audubon prints donated to the library by Graham Arader.
+
+							There are 118 high resolution TIFFs, already in the DRS, and all fully and beautifully cataloged.
 						</aside>
 					</section>
 					<section>
@@ -383,7 +433,9 @@
 						<p>Tools need: Exhibit, Multipage Support</p>
 						<img src="images/catskills.jpg" class="stretch"/>
 						<aside class="notes">
-							Phil Brown's Catskills Institute is a collection of images, postcards, programs, and other artifacts of the thriving Jewish communities in Catskill Mountains. Since this collection contains a lot of multipage objects (postcards with front and back scans, brochures, etc), it gave us the opportunity to develop support for files with ordinal values in the DRS.
+							Phil Brown's Catskills Institute is a collection of images, postcards, programs, and other artifacts of the thriving Jewish communities in Catskill Mountains.
+
+							Since this collection contains a lot of multipage objects (including postcards with front and back scans, brochures, etc), it gave us the opportunity to develop support for files with ordinal values in the DRS.
 						</aside>
 					</section>
 					<section>
@@ -391,7 +443,9 @@
 						<p>Tools need: A/V Playlist</p>
 						<img src="images/sadow.png" class="stretch"/>
 						<aside class="notes">
-							Stephen Sadow’s interviews with Latin American Writers and Artists is a series of 12 video interviews recorded in Argentina by Sadow himself in 2012. All of these materials are stored together in the DRS, but Sadow was interested creating a presentation version for his users.
+							Stephen Sadow’s interviews with Latin American Writers and Artists is a series of 12 video interviews recorded in Argentina by Sadow himself in 2012.
+
+							All of these materials are stored together in the DRS, but Sadow was interested creating a presentation version for his users.
 						</aside>
 					</section>
 					<section>
@@ -405,11 +459,28 @@
 						</ul>
 						<img src="images/DRSplus_RF.jpeg" style="width:50%;float:right;"/>
 						<aside class="notes">
-							Since the pilot was also a test of the usefulness of the Toolkit as a digital support framework for the general Northeastern community, we wanted to include a few other Northeastern projects in the pilot. In February we sent out a call for proposals to solicit projects from the University community. We received 12 proposals in two months from various university groups and departments, including the Departments of Mechanical and Industrial Engineering, Nursing, Music, Political Science, and the School of Criminology of Criminal Justice.
+							Since the pilot was also a test of the usefulness of the Toolkit as a digital support framework for the general Northeastern community, we wanted to include a few other Northeastern projects in the pilot.
+
+							In February we sent out a call for proposals to solicit projects from the University community.
+
+							We received 12 proposals in two months from various university groups and departments, including the Departments of:
+							Mechanical and Industrial Engineering,
+							Nursing,
+							Music,
+							Political Science,
+							and the School of Criminology of Criminal Justice.
+
 							We selected projects based on whether or not they were feasible, suitable, and sharable.
+
 							To satisfy the feasibility requirement, we wanted to make sure selected projects had content that either already existed in the DRS or was already digitized and could be ingested into the DRS.
-							To satisfy the suitability requirement, we wanted to make sure selected projects had the right to distribute the content, and if they did, were appropriate to be ingested in the DRS. Also, we only wanted to work with content that could be made publicly available.
+
+							To satisfy the suitability requirement, we wanted to make sure selected projects had the right to distribute the content, and if they did, were appropriate to be ingested in the DRS.
+
+							Also, we only wanted to work with content that could be made publicly available.
+
 							To satisfy the share-ability requirement, we wanted to make sure that the features developed for that particular project could be shared with current or future Toolkit projects.
+
+							Based on that criteria we selected three additional projects for the Toolkit pilot:
 						</aside>
 					</section>
 					<section>
@@ -417,7 +488,9 @@
 						<p>Tools need: Exhibit, A/V Playlist, Geographic and Timeline Visualizations</p>
 						<img src="images/desegregation.png" class="stretch"/>
 						<aside class="notes">
-							University Archives and Special Collections proposed an exhibit to display DRS content related to the history of the desegregation of Boston Public Schools in the 1970's. This proposal was selected because the content was already available in the DRS (though cataloging is still ongoing) and because it had the potential to require development of multiple tools, including exhibits, audio and video displays and playlists, timeline and geographic visualizations, and narrative pages.
+							University Archives and Special Collections proposed an exhibit to display DRS content related to the history of the desegregation of Boston Public Schools in the 1970's.
+
+							This proposal was selected because the content was already available in the DRS and because it had the potential to require development of multiple tools.
 						</aside>
 					</section>
 					<section>
@@ -425,7 +498,9 @@
 						<p>Tools need: Exhibit, A/V Playlist</p>
 						<img src="images/dmcstudios.jpeg" class="stretch"/>
 						<aside class="notes">
-							Digital Media Commons Studios proposed a showcase of student created work produced using the state-of-the-art audio and visual recording tools in the DMC Studios. This proposal was selected because it is a small, easily ingested collection, that requires support for many different content types.
+							Digital Media Commons Studios proposed a showcase of student created work produced using the state-of-the-art audio and visual recording tools in the DMC Studios.
+
+							This proposal was selected because it is a small, easily ingested collection, that requires support for many different content types.
 						</aside>
 					</section>
 					<section>
@@ -433,7 +508,11 @@
 						<p>Tools need: Exhibit, A/V Playlist, Timeline Visualization</p>
 						<img src="images/hac.png" class="stretch"/>
 						<aside class="notes">
-							The Holocaust Awareness Committee proposed an archive of the recordings of Northeastern’s Holocaust Awareness Week program, which is an annual event that includes lectures, survivor testimonies, and featured speakers. This proposal was selected because the content was already cataloged by the library (though the films did need some re-digitization), and would require video support and a timeline visualization.
+							The Holocaust Awareness Committee proposed an archive of the recordings of Northeastern’s Holocaust Awareness Week program, which is an annual event that includes lectures, survivor testimonies, and featured speakers.
+
+							This proposal was selected because the content was already cataloged by the library (though the films did need some re-digitization), and would require video support and a timeline visualization.
+
+							What is your criteria for project selection?
 						</aside>
 					</section>
 					<section>
@@ -441,12 +520,19 @@
 						<img src="images/workflow.jpg" class="stretch" style="border:none"/>
 						<aside class="notes">
 							Once the framework was established and the projects were selected, we got to work preparing the project teams for their sites, which involved several steps:
-							An intake interview is required to learn more about the project work, to answer any questions the project team have about the process, to discuss the timeline of the work, and to clarify responsibilities for the DSG and the project team.
+
+							An intake interview is required to learn more about the project work, to answer any questions the project team may have about the process, to discuss the timeline of the work, and to clarify responsibilities for the DSG and the project team.
+
 							We recommend the project team review their content, with guidance from the university’s Copyright Officer, if needed.
+
 							If the files are not already in the DRS, we help the projects prepare their files to be ingested, and create metadata, if necessary.
+
 							When the files and project team are ready, a Wordpress site is generated from the Toolkit template, customized based on basic project specifications (including their own URL, branding requirements, etc), and issued to designated project team member, who became the site administrator.
-							We offer training and instruction for project teams throughout the process, though mostly during the file preparation and Wordpress installation stages. Documentation was critical, not just to help the project teams work with the Toolkit and display their files, but for us as well as we designed the process.
+
+							We offer training and instruction for project teams throughout the process, though mostly during the file preparation and Wordpress installation stages. Documentation was critical, not just to help the project teams work with the Toolkit, but for us as well as we designed the process.
+
 							When a project team is ready to launch their site, we review the site to make sure it meets some basic Toolkit requirements. We check to make sure the site includes the required University branding elements, that a credits page is included for the project team, that the DSG and Toolkit are acknowledged, and we make sure that changes have not been made that might prevent the DSG from performing basic site maintenance.
+
 							Once the site is ready for the public, we help the project team promote their site.
 						</aside>
 					</section>
@@ -566,13 +652,16 @@
 							<li>University Branding</li>
 						</ul>
 						<aside class="notes">
-							Introducing project teams to the idea of repository storage with an API connection to Wordpress and managing pilot expectations was difficult. We did our best to discuss the scope and timeline of the project and establish roles during the intake interview meetings held with project teams, but additional discussions and documentation was needed. We prepared a document describing the goals and outcomes of the Toolkit pilot, as well as an architectural diagram, and made a better effort to communicate with project teams about the goals and timeline of the project.
-
-							Our beta testing revealed that even experienced Wordpress users were hesitant to alter CSS to customize the Wordpress site. We compromised by switching to a similar Wordpress theme with more customizations available in the Wordpress backend to allow project teams to avoid the CSS file for most customizations.
-
-							Those who were familiar with Wordpress expected more to be done with the media gallery, or expected that DRS content could be customized using tools similar to those available in the media gallery (like resizing images or adding captions). We tweaked the Wordpress theme to improve customizations for DRS content, and improved documentation to explain when to use the Toolkit media gallery.
-
-							Establishing how university branding should be incorporated into the site was more difficult than expected. We eventually met with University Marketing to discuss our branding responsibilities. Their rule was, "If it's hosted on University servers, it needs to include University branding." We updated the template theme to include basic University branding, and informed the project representatives that they would need to contact Marketing if they wanted to customize or remove the prescribed branding.
+							Introducing project teams to the idea of repository storage with an API connection to Wordpress and managing pilot expectations was difficult.
+							We did our best to discuss the scope and timeline of the project and establish roles during the intake interview meetings held with project teams, but additional discussions and documentation was needed.
+							We prepared a document describing the goals and outcomes of the Toolkit pilot, as well as an architectural diagram, and made a better effort to communicate with project teams about the goals and timeline of the project.
+							Our beta testing revealed that even experienced Wordpress users were hesitant to alter CSS to customize the Wordpress site.
+							We compromised by switching to a similar Wordpress theme with more customizations available in the Wordpress backend to allow project teams to avoid the CSS file for most customizations.
+							Those who were familiar with Wordpress expected more to be done with the media gallery, or expected that DRS content could be customized using tools similar to those available in the media gallery (like resizing images or adding captions).
+							We tweaked the Wordpress theme to improve customizations for DRS content, and improved documentation to explain when to use the Toolkit media gallery.
+							Establishing how university branding should be incorporated into the site was more difficult than expected.
+							We eventually met with University Marketing to discuss our branding responsibilities. Their rule was, "If it's hosted on University servers, it needs to include University branding."
+							We updated the template theme to include basic University branding, and informed the project representatives that they would need to contact Marketing if they wanted to customize or remove the prescribed branding.
 						</aside>
 					</section>
 				</section>
@@ -603,11 +692,17 @@
 							</li>
 						</ul>
 						<aside class="notes">
-							As of today the Library's Graham Arader "Picturing the World" Gallery, University Archives collections, and Sadow's Jewish Latin American Writers and Artists project teams have all received their Wordpress instances and are currently customizing their sites. Catskills, DMC Studios, and the Holocaust Awareness Committee projects are still in the file prep and ingestion stages, but should be ready to receive their Toolkit sites by the end of the year.
+							As of today the Library's Graham Arader "Picturing the World" Gallery, University Archives collections, and Sadow's Jewish Latin American Writers and Artists project teams have all received their Wordpress instances and are currently customizing their sites.
+
+							Catskills, DMC Studios, and the Holocaust Awareness Committee projects are still in the file prep and ingestion stages, but should be ready to receive their Toolkit sites by the end of the year.
 
 							In 2016 we will check in with the 2015 Toolkit sites to see how they are doing and what can be improved. We’ll also send out another Call for Proposals to select new projects and generate ideas for new tools to add to the Toolkit.
 
-							Throughout the pilot we identified a few improvements for 2016, including improving integration with content that can't or shouldn't be stored in the DRS, or is already available in another repository, like the DPLA. We'd also like to use the DRS Sets feature so project teams can select content from various DRS collections, and we want to allow project teams to customize the full metadata display for their items. Right now maintenance and updates for the Toolkit sites is done manually by Eli, and we'd like to move to an automated process.
+							Throughout the pilot we identified a few improvements for 2016, including:
+							improving integration with content that can't or shouldn't be stored in the DRS, or is already available in another repository, like the DPLA.
+							We'd also like to use the DRS Sets feature so project teams can select content from various DRS collections,
+							and we want to allow project teams to customize the full metadata display for their items.
+							Right now maintenance and updates for the Toolkit sites is done manually by Eli, and we'd like to move to an automated process.
 
 							And finally, if our grant proposal is funded, we will add support for XML aware searching, particularly for TEI and for annotating content.
 						</aside>

@@ -134,7 +134,10 @@
 					<h4>Eli Zoller <small>Web Developer and Designer</small></h4>
 					<h4>Northeastern University Libraries</h4>
 					<aside class="notes">
-						Good afternoon everyone. My name is Sarah Sweeney. I'm the Digital Repository Manager for Northeastern University Library. I'm here today with my colleague, Eli Zoller, Web Developer and Designer for Northeastern University Library, and we’re going to talk about the DRS Project Toolkit, which was developed by our team to present digital project materials stored in our Fedora/Hydra digital repository in a customized Wordpress site. We’re going to discuss why we wanted to create such a tool, what it is and how we developed it, do a demonstration, and explain some lessons learned and next steps. We also have some questions for you about your experiences with this kind of development.
+						Sarah Sweeney, Digital Repository Manager
+						Eli Zoller, Web Developer and Designer
+
+						DRS Project Toolkit, which was developed by our team to present digital project materials stored in our Fedora/Hydra digital repository in a customized Wordpress site.
 					</aside>
 				</section>
 
@@ -145,17 +148,42 @@
 					<h3>4. DRS API</h3>
 					<h3>5. DRS + Wordpress</h3>
 					<h3>6. Lessons Learned and What's Next</h3>
+					<aside class="notes">
+						We’re going to discuss
+						<ul>
+							<li>why we wanted to create such a tool</li>
+							<li>what it is and how we developed it</li>
+							<li>do a demonstration</li>
+							<li>and explain some lessons learned and next steps.</li>
+						</ul>
+						We also have some questions for you about your experiences with this kind of development.
+					</aside>
 				</section>
 
 				<section>
 					<section>
-						<h2>Digital Scholarship Group <small>DSG</small></h2>
-						[NEED IMAGE OR TEXT]
-						<!-- <img src="images/binary.jpg" style="display:inline;text-align:left;width:40%;margin-right:5%"/><img src="images/scholar.jpg" style="display:inline;text-align:right;width:40%;margin-left:5%;"/> -->
+						<h2>DSG: Supporting Digital Scholarship</h2>
+						<img class="stretch" src="images/toolkitAlternatives.jpeg"/>
 						<aside class="notes">
-							Eli and I are part of the Digital Scholarship Group (DSG), which is a fairly new department in the library. We consider the DSG an applied research group, and we are responsible for researching, developing, and supporting new avenues for digital scholarship at Northeastern. One of the primary goals for the DSG when it was first formed in 2013 was to find a way to support the various projects and research groups that needed to publish digital projects, and we also wanted to ensure project materials were securely stored and preserved. Many researchers want a simple, customizable site to share project work, and they often look to Wordpress or Omeka to store and display their content, neither of which is ideal for long term storage. Other projects turn to the library's Digital Repository Service to store content, which IS ideal for long term storage, but can't be customized for individual project needs. Some look to both the DRS for preservation and Wordpress or Omeka for sharing and display, duplicating their work across multiple systems.
+							Digital Scholarship Group (DSG), which is a fairly new department in the library.
 
-							We wanted to create a tool that would satisfy the preservation AND presentation needs of a project by joining the DRS with customizable web publishing tools, and we wanted to make the tool easily reproducible and sustainable over time. Thus began the development of the DRS Project Toolkit.
+							DSG is an applied research group, responsible for researching, developing, and supporting new avenues for digital scholarship at Northeastern.
+
+							A primary goal for the DSG when it was first formed in 2013 was to find a way to support the various projects and research groups that needed to publish digital projects.
+
+							We also wanted to ensure project materials were securely stored and preserved.
+
+							Many of our researchers want a simple, customizable site to share project work, and they often look to Wordpress or Omeka to publish and share their content, neither of which is ideal for long term storage.
+
+							Other projects turn to the library's Digital Repository Service to store and preserve content, which IS ideal for long term storage, but can't be customized for individual project needs.
+
+							Some look to both the DRS for preservation and Wordpress or Omeka for publishing and sharing, duplicating their work across multiple systems.
+
+							We wanted to create a tool that would satisfy the preservation AND presentation needs of a project by joining the DRS with customizable web publishing tools,
+
+							and we wanted to make the tool easily reproducible and sustainable over time. Thus began the development of the DRS Project Toolkit.
+
+							How have you to support project publishing and object storage at your institution?
 						</aside>
 					</section>
 					<section>
@@ -212,7 +240,11 @@
 						  </div>
 						</div>
 						<aside class="notes">
-							Planning for the DRS project toolkit started a year ago in October 2014 as a pilot project. We started with a project team of 5, and have expanded to a team of 12 today, including two developers. At the end of the 2015 pilot, 6 Northeastern projects will be using the Toolkit to present their materials.
+							Planning for the DRS project toolkit started a year ago in October 2014 as a pilot project.
+
+							We started with a project team of 5, and have expanded to a team of 12 today, including two developers and 4 research assistants.
+
+							At the end of the 2015 pilot, 6 Northeastern projects will be using the Toolkit to present their materials.
 						</aside>
 					</section>
 					<section>
@@ -348,7 +380,7 @@
 							<li>Department of Nursing</li>
 							<li>Department of Music</li>
 							<li>Department of Political Science</li>
-							<li>Department of School of Criminology of Criminal Justice</li>
+							<li>Department of School of Criminology and Criminal Justice</li>
 						</ul>
 						<img src="images/DRSplus_RF.jpeg" style="width:50%;float:right;"/>
 						<aside class="notes">
@@ -402,7 +434,7 @@
 				<section>
 					<section>
 						<h2>DRS API</h2>
-						<h5>Written by David Cliff, Lead Digital Library Developer at Northeastern University Libraries</h5>
+						<h5>Written by David Cliff <small>Senior Digital Library Developer</small></h5>
 					</section>
 					<section>
 						<h3>Single Item</h3>
@@ -412,14 +444,14 @@
 							retrieves MODS, derivatives, and master files
 						</aside>
 					</section>
-					<section>
+					<!-- <section>
 						<h3>Collection Export</h3>
 						<pre>/api/v1/export/[collection pid]</pre>
 						<img src="images/api-export.png"  class="stretch"/>
 						<aside class="notes">
 							retrieves MODS, derivatives, and master files for all items that are children of collection
 						</aside>
-					</section>
+					</section> -->
 					<section>
 						<h3>Scoped Search</h3>
 						<pre>/api/v1/search/[collection pid]</pre>

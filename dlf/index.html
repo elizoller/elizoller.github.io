@@ -162,7 +162,7 @@
 				<section>
 					<section>
 						<h2>DSG: Supporting Digital Scholarship</h2>
-						<img class="stretch" src="images/toolkitAlternatives.jpeg"/>
+						<img class="stretch" src="images/toolkitAlternatives.jpeg" style="border:none"/>
 						<aside class="notes">
 							Digital Scholarship Group (DSG), which is a fairly new department in the library.
 <br/>							DSG is an applied research group, responsible for researching, developing, and supporting new avenues for digital scholarship at Northeastern.
@@ -190,7 +190,6 @@
 								<li>Greg Palermo <small>NULab Fellow and DSG Research Assistant</small></li>
 								<li>Amanda Rust <small>Assistant Director, Digital Scholarship Group</small></li>
 								<li>Sarah Sweeney <small>Digital Repository Manager</small></li>
-								<li>Patrick Yott <small>Associate Dean, Digital Strategies and Services</small></li>
 								<li>Eli Zoller <small>Web Developer and Designer</small></li>
 							</ul>
 						</div>
@@ -290,13 +289,18 @@
 					<section>
 						<h2>Stakeholder Input</h2>
 						<h4>Suggested Features</h4>
-						<ul style="font-size:50%;">
+						<div style="width:45%;margin-right:2%float:left;display:inline-block">
+						<ul style="font-size:80%;">
 							<li>Faceted full text search</li>
 							<li>Visualizations, particularly maps and timelines</li>
 							<li>Downloads</li>
 							<li>Sharing, including citations, social media, and object embedding</li>
 							<li>Easily interpreted data feed (i.e. JSON, CSV, RDF, XML)</li>
 							<li>Credit pages for project creators and curators</li>
+						</ul>
+					</div>
+					<div style="width:45%;float:right;margin-left:2%;display:inline-block">
+						<ul style="font-size:80%;">
 							<li>Metrics</li>
 							<li>Exhibits and/or galleries</li>
 							<li>Support for objects that are not stored in the DRS</li>
@@ -304,6 +308,7 @@
 							<li>Annotations</li>
 							<li>XML-aware search</li>
 						</ul>
+					</div>
 						<aside class="notes">
 							Before we started work on the Hydra API that would feed DRS data to the Toolkit sites, we wanted to know precisely what functionality was needed to make a good digital project site.
 <br/>							We met in December with representatives from a few DSG projects and partners, including representatives from:
@@ -383,7 +388,7 @@
 					</section>
 					<section>
 						<h3>"Picturing the World" Gallery, Graham Arader <small>University Libraries</small></h3>
-						<p>Tools need: Exhibit</p>
+						<p>Tools needed: Exhibit</p>
 						<img src="images/arader_avian.png" class="stretch"/>
 						<aside class="notes">
 							The Library’s "Picturing the World" gallery is a collection of maps, watercolors, and Audubon prints donated to the library by Graham Arader.
@@ -392,7 +397,7 @@
 					</section>
 					<section>
 						<h3>Catskills Institute, Professor Phil Brown <small>Department of Sociology and Anthropology</small></h3>
-						<p>Tools need: Exhibit, Multipage Support</p>
+						<p>Tools needed: Exhibit, Multipage Support</p>
 						<img src="images/catskills.jpg" class="stretch"/>
 						<aside class="notes">
 							Phil Brown's Catskills Institute is a collection of images, postcards, programs, and other artifacts of the thriving Jewish communities in Catskill Mountains.
@@ -401,7 +406,7 @@
 					</section>
 					<section>
 						<h3>Interviews with Jewish Latin American Writers and Artists, Professor Stephen A. Sadow <small>Department of Languages, Literatures, and Cultures</small></h3>
-						<p>Tools need: A/V Playlist</p>
+						<p>Tools needed: A/V Playlist</p>
 						<img src="images/sadow.png" class="stretch"/>
 						<aside class="notes">
 							Stephen Sadow’s interviews with Latin American Writers and Artists is a series of 12 video interviews recorded in Argentina by Sadow himself in 2012.
@@ -437,7 +442,7 @@
 					</section>
 					<section>
 						<h3>Boston Public Schools Desegregation Collection <small>University Archives and Special Collections</small></h3>
-						<p>Tools need: Exhibit, A/V Playlist, Geographic and Timeline Visualizations</p>
+						<p>Tools needed: Exhibit, A/V Playlist, Geographic and Timeline Visualizations</p>
 						<img src="images/desegregation.png" class="stretch"/>
 						<aside class="notes">
 							University Archives and Special Collections proposed an exhibit to display DRS content related to the history of the desegregation of Boston Public Schools in the 1970's.
@@ -446,7 +451,7 @@
 					</section>
 					<section>
 						<h3>Student Work Showcase, Digital Media Commons Studios <small>University Libraries</small></h3>
-						<p>Tools need: Exhibit, A/V Playlist</p>
+						<p>Tools needed: Exhibit, A/V Playlist</p>
 						<img src="images/dmcstudios.jpeg" class="stretch"/>
 						<aside class="notes">
 							Digital Media Commons Studios proposed a showcase of student created work produced using the state-of-the-art audio and visual recording tools in the DMC Studios.
@@ -455,7 +460,7 @@
 					</section>
 					<section>
 						<h3>Holocaust Awareness Week Programming, Holocaust Awareness Committee <small>College of Social Sciences and Humanities</small></h3>
-						<p>Tools need: Exhibit, A/V Playlist, Timeline Visualization</p>
+						<p>Tools needed: Exhibit, A/V Playlist, Timeline Visualization</p>
 						<img src="images/hac.png" class="stretch"/>
 						<aside class="notes">
 							The Holocaust Awareness Committee proposed an archive of the recordings of Northeastern’s Holocaust Awareness Week program, which is an annual event that includes lectures, survivor testimonies, and featured speakers.
@@ -521,7 +526,7 @@
 						<aside class="notes">
 							The toolkit itself is a Wordpress plugin and Wordpress child-theme. We chose Wordpress over Omeka because ultimately we thought the built in features of wordpress would be easier to learn and customize by our users. We would be curious to hear feedback on your thoughts and decisions on Wordpress versus Omeka.
 
-							Our plugin provides templates for three main components of search, browse, and single item view. These templates also enqueue Javascript from the plugin which uses AJAX to reach out to the API, parse the JSON, and present it to users. The plugin provides search, browse, and single item view with extremely minimal Wordpress storage- all Wordpress has in it’s database is the URL for the starting or parent collection and some metadata settings.
+							Our plugin provides templates for three main components of search, browse, and single item view. These templates also enqueue Javascript from the plugin which uses AJAX to reach out to the API, parse the JSON, and present it to users. The plugin provides search, browse, and single item view with extremely minimal Wordpress storage- all Wordpress has in it’s database is the URL for the starting or parent collection in the DRS and some metadata settings. Inputting the collection URL from the DRS associates the collection structure established in the DRS.
 						</aside>
 					</section>
 					<section>
@@ -572,7 +577,7 @@
 						</ul>
 						<aside class="notes">
 							The other functionality that is a focal point for our users is the ability to create exhibits. Here we mean exhibits to be a page or set of pages that contains narrative and objects together with a variety of different layouts and display options such as galleries.
-							To achieve this inside Wordpress, we take advantage of some of Wordpress' core functionality and plugins developed by other people. We provide a page builder that allows users to create rows and columns for their content. To pull content dynamically from the DRS, we use a set of custom shortcodes. The four shortcodes we've developed so far include:
+							To achieve this inside Wordpress, we take advantage of some of Wordpress' core functionality and plugins developed by other people. We provide a page builder that allows users to create rows and columns for their content. To pull content dynamically from the DRS, we use a set of custom shortcodes. Wordpress defines shortcodes as "A shortcode is a WordPress-specific code that lets you do nifty things with very little effort. Shortcodes can embed files or create objects that would normally require lots of complicated, ugly code in just one line." The four shortcodes we've developed so far include:
 						</aside>
 					</section>
 					<section>
@@ -638,14 +643,13 @@
 							</li>
 							<li>Installations
 								<ul>
-									<li>Catskills DMC Studios, and Holocaust Awareness Committee</li>
+									<li>Catskills, DMC Studios, and Holocaust Awareness Committee</li>
 								</ul>
 							</li>
 							<li>Annual Check-in and 2016 Call for Proposals</li>
 							<li>Toolkit Improvements
 								<ul>
 									<li>Improved integration with non-DRS content</li>
-									<li>Sets integration</li>
 									<li>Maintenance and Updates</li>
 									<li>Customizing the item display</li>
 									<li>TEI and annotations</li>
@@ -673,23 +677,22 @@
 				<section>
 					<section>
 						<h2>Thanks!</h2>
-						<h4>Contact</h4>
-						<p>Sarah Sweeney, sj.sweeney@neu.edu</p>
-						<p>Eli Zoller, e.zoller@neu.edu</p>
-						<h4>More information</h4>
-						<a href="http://dsg.neu.edu/drs-project-toolkit">http://dsg.neu.edu/drs-project-toolkit</a>
-						<a href="">DLF Blog Post</a>
-						<h4>Questions for You</h4>
+						<p><b>Questions for You</b></p>
 						<ol>
 							<li>How have others sought to support project publishing and object storage?</li>
-							<li>What is your criteria for project selection?</li>
 							<li>What has been your experience with Wordpress for digital project work?</li>
 							<li>Have others experienced issues with supporting Wordpress over time?</li>
 						</ol>
-						<h5>DRS: <a href="http://repository.library.northeastern.edu">repository.library.northeastern.edu</a></h5>
+						<br/>
+						<h5>More Info</h5>
+						<p>Sarah Sweeney, sj.sweeney@neu.edu<br/>Eli Zoller, e.zoller@neu.edu</p>
+						<a href="https://twitter.com/nu_dsg">@NU_DSG</a> |
+						<a href="http://dsg.neu.edu/drs-project-toolkit">http://dsg.neu.edu/drs-project-toolkit</a>
+
+						<!-- <h5>DRS: <a href="http://repository.library.northeastern.edu">repository.library.northeastern.edu</a></h5>
 						<h5>DRS Github: <a href="http://github.com/NEU-Libraries/cerberus">github.com/NEU-Libraries/cerberus</a></h5>
 						<h5>DRS Toolkit Plugin: <a href="http://github.com/NEU-Libraries/drs-toolkit-wp-plugin">github.com/NEU-Libraries/drs-toolkit-wp-plugin</a></h5>
-						<h5>DRS Toolkit Theme: <a href="http://github.com/NEU-Libraries/drs-toolkit-wp-theme">github.com/NEU-Libraries/drs-toolkit-wp-theme</a></h5>
+						<h5>DRS Toolkit Theme: <a href="http://github.com/NEU-Libraries/drs-toolkit-wp-theme">github.com/NEU-Libraries/drs-toolkit-wp-theme</a></h5> -->
 					</section>
 				</section>
 			</div>

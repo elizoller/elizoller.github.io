@@ -1,0 +1,763 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>The DRS Project Toolkit: A Scalable Model for Digital Projects</title>
+
+		<meta name="author" content="Eli Zoller">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+		<style>
+		#ex0 div div, #ex1 div div, #ex2 div div, #ex3 div div, #ex4 div div, #ex5 div div {
+			display:block;margin-left:auto;margin-right:auto;
+		}
+		.google-visualization-table {
+			color:#000000;
+		}
+		.reveal .timeline {
+  position: relative;
+  overflow: auto;
+	font-size:50%;
+}
+
+.reveal .timeline:before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 5px;
+  background: #dddddd;
+  left: 0;
+}
+.reveal .timeline h3 {
+  background: #dddddd;
+  max-width: 6em;
+  margin: 0 auto 1em;
+  padding: 0.5em;
+  text-align: center;
+  position: relative;
+  clear: both;
+}
+.reveal .timeline ul {
+  list-style: none;
+  padding: 0 0 0 1em;
+  z-index: 1;
+}
+.reveal .timeline li {
+  background: #dddddd;
+  padding: 1em;
+  margin-bottom: 1em;
+  position: relative;
+}
+.reveal .timeline li:before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-top: 1em solid #dddddd;
+  border-left: 1em solid transparent;
+  position: absolute;
+  left: -1em;
+  top: 0;
+}
+.reveal .timeline h4 {
+  margin-top: 0;
+	margin-bottom:0;
+	color:#000;
+}
+.reveal .timeline time {
+  font-style: italic;
+	color:#000;
+}
+
+@media screen and (min-width: 40em) {
+  .reveal .timeline:before {
+    left: 50%;
+  }
+  .reveal .timeline ul {
+    padding-left: 0;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .reveal .timeline li {
+    width: 42%;
+  }
+  .reveal .timeline li:nth-child(even) {
+    float: right;
+    margin-top: 2em;
+  }
+  .reveal .timeline li:nth-child(odd) {
+    float: left;
+  }
+  .reveal .timeline li:nth-child(odd):before {
+    border-top: 1em solid #dddddd;
+    border-right: 1em solid transparent;
+    right: -1em;
+    left: auto;
+  }
+  .reveal .timeline li:nth-of-type(2n+1) {
+    clear: both;
+  }
+}
+		</style>
+		<script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['corechart, table']}]}"></script>
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>The DRS Project Toolkit:</h1>
+					<h2>A Scalable Model for Digital Projects</h2>
+					<h4>Sarah Sweeney <small>Digital Repository Manager</small></h4>
+					<h4>Eli Zoller <small>Web Developer and Designer</small></h4>
+					<h4>Northeastern University Libraries</h4>
+					<aside class="notes">
+						Sarah Sweeney, Digital Repository Manager
+						<br/>Eli Zoller, Web Developer and Designer
+						<br/>
+						DRS Project Toolkit, which was developed by our team to present digital project materials stored in our Fedora/Hydra digital repository in a customized Wordpress site.
+					</aside>
+				</section>
+
+				<section>
+					<h3>1. DSG and DRS Overview</h3>
+					<h3>2. DRS Project Toolkit Planning</h3>
+					<h3>3. DRS Project Toolkit Pilot</h3>
+					<h3>4. DRS API</h3>
+					<h3>5. DRS + Wordpress</h3>
+					<h3>6. Lessons Learned and What's Next</h3>
+					<aside class="notes">
+						We’re going to discuss
+						<ul>
+						<li>why we wanted to create such a tool</li>
+						<li>what it is and how we developed it</li>
+						<li>do a demonstration</li>
+						<li>and explain some lessons learned and next steps.</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<section>
+						<h2>DSG: Supporting Digital Scholarship</h2>
+						<img class="stretch" src="images/toolkitAlternatives.jpeg" style="border:none"/>
+						<aside class="notes">
+							We are part of the Digital Scholarship Group (DSG), which is a fairly new department in the library.
+							<br/>
+							We consider ourselves an applied research group, responsible for researching, developing, and supporting new avenues for digital scholarship at Northeastern.
+							<br/>
+							A primary goal for the DSG when it was first formed in 2013 was to find a way to support the various projects and research groups that needed to publish digital projects.
+							<br/>
+							Many of our researchers want a simple, customizable site to share project work, and they often look to Wordpress or Omeka to publish and share their content, neither of which is ideal for long term storage.
+							<br/>
+							Other projects turn to the library's Digital Repository Service to store and preserve content, which IS ideal for long term storage, but can't be customized for individual project needs.
+							<br/>
+							Some look to both the DRS for preservation and Wordpress or Omeka for publishing and sharing, duplicating their work across multiple systems.
+							<br/>
+							We wanted to create a tool that would satisfy the preservation AND presentation needs of a project by joining the DRS with customizable web publishing tools,
+						</aside>
+					</section>
+					<section>
+						<img src="images/slide2_1Left.png" style="width:48%;float:left;"/>
+						<img src="images/slide2_1Right.png" style="width:48%;float:right;"/>
+						<aside class="notes">
+							This would effectively allow project teams to take just their content stored in the DRS and display it however they would like in a customized website with their own color scheme, branding, text, and features. For example, on the [left] we have a screenshot of the Arader prints collection in the DRS, and on the [right] we have a screenshot of the Arader prints collection displayed in a customized Wordpress site that's drawing materials out of the DRS.
+						</aside>
+					</section>
+					<section>
+						<div style="width:34%;margin-right:2%;display:inline-block;">
+							<h4>DRS Project Toolkit Team</h4>
+							<ul style="font-size:60%;list-style-type:none;" >
+								<li>Param Ajmera <small>DSG Research Assistant</small></li>
+								<li>David Cliff <small>Senior Digital Library Developer</small></li>
+								<li>Colleen Curtis <small>DSG Research Assistant</small></li>
+								<li>Dave Decamp <small>NULab Fellow</small></li>
+								<li>Julia Flanders <small>Director, Digital Scholarship Group</small></li>
+								<li>Abbie Levesque <small>DSG Coordinator</small></li>
+								<li>Jim McGrath <small>DSG Coordinator</small></li>
+								<li>Greg Palermo <small>NULab Fellow and DSG Research Assistant</small></li>
+								<li>Amanda Rust <small>Assistant Director, Digital Scholarship Group</small></li>
+								<li>Sarah Sweeney <small>Digital Repository Manager</small></li>
+								<li>Eli Zoller <small>Web Developer and Designer</small></li>
+							</ul>
+						</div>
+						<div style="width:60%;margin-left:2%;display:inline-block">
+							<h4>Pilot Project Timeline</h4>
+							<div class="timeline">
+						    <ul>
+									<li>
+										<h4>First projects receive their toolkit site</h4>
+										<time>October 2015</time>
+									</li>
+									<li>
+										<h4>Alpha testing</h4>
+										<time>August 2015</time>
+									</li>
+						      <li>
+						        <h4>Project work begins, API Development begins, Wordpress Development begins</h4>
+						        <time>May 2015</time>
+						      </li>
+						      <li>
+						        <h4>Project Selection</h4>
+						        <time>April 2015</time>
+						      </li>
+						      <li>
+						        <h4>Work Spec</h4>
+						        <time>March 2015</time>
+						      </li>
+						      <li>
+						        <h4>Call for Proposals</h4>
+						        <time>February 2015</time>
+						      </li>
+						      <li>
+						        <h4>Toolkit planning begins</h4>
+						        <time>October 2014</time>
+						      </li>
+						    </ul>
+						  </div>
+						</div>
+						<aside class="notes">
+ 							Planning for the DRS project toolkit started in October 2014 as a pilot project.
+ 							<br/>
+							We started with a project team of 4, and have expanded to a team of 10 today, including two developers and 4 research assistants.
+							<br/>
+							At the end of the 2015 pilot, 6 Northeastern projects will be using the Toolkit to present their materials.
+						</aside>
+					</section>
+					<section>
+						<h2>Goals</h2>
+						<img src="images/DRS_Toolkit_Architecture.png" style="width:50%;float:left;"/>
+						<ul style="width:40%;float:right;font-size:70%">
+							<li>Develop a lightweight and sustainable model for preserving and displaying/distributing project materials.</li>
+							<li>Provide Northeastern projects with a low-barrier customized website to share project work.</li>
+							<li>Support Northeastern projects by preserving project materials in the DRS.</li>
+							<li>Encourage collaborative development between Toolkit sites.</li>
+						</ul>
+						<aside class="notes">
+							In the beginning we had a four goals for the pilot:
+							<br/>
+							We wanted to create a sustainable and shareable digital project environment for scholars.
+							<br/>
+							We wanted to start a program that would scale, and we wanted to encourage project teams to become stewards of their own content, and empower them to customize and develop on their own.
+							<br/>
+							We wanted to avoid providing unique support for individual projects, but work with projects to create customizations that could be utilized by other projects.
+							<br/>
+							And we wanted to make sure that the project materials created were stored securely in the DRS, where the library could guarantee materials would be preserved.
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Digital Repository Service <small>DRS</small></h2>
+						<img src="images/DRS_Laptop.jpg" style="max-height:80%;" class="stretch">
+						<a href="http://repository.library.northeastern.edu">http://repository.library.northeastern.edu</a>
+						<aside class="notes">
+							Before I dive into the details, let me give a brief overview of the DRS itself, since it is the foundation of the Toolkit.
+							<br/>
+							The DRS is a homegrown repository, which uses Fedora as the underlying storage architecture and Hydra for the interface.
+							<br/>
+							The interface is clean and focused and its main features are designed to support the widest possible range of material.
+						</aside>
+					</section>
+					<section>
+						<h2>Digital Repository Service <small>DRS</small></h2>
+						<img src="images/search_result_sample.png" style="max-height:80%;" class="stretch">
+						<a href="http://repository.library.northeastern.edu">http://repository.library.northeastern.edu</a>
+						<aside class="notes">
+							DRS users can
+							<ul>
+								<li>browse through nested communities and collections or </li>
+								<li>perform basic keyword searching across the full site,</li>
+							</ul>
+							Search results and browse pages allow users to sort results, or refine them using facets.
+							<br/>
+							These are the features we hoped to take advantage of using the Hydra API.
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>DRS Project Toolkit Planning</h2>
+					</section>
+					<section>
+						<h2>Stakeholder Input</h2>
+						<h4>Suggested Features</h4>
+						<div style="width:45%;margin-right:2%float:left;display:inline-block">
+						<ul style="font-size:80%;">
+							<li>Faceted full text search</li>
+							<li>Visualizations, particularly maps and timelines</li>
+							<li>Downloads</li>
+							<li>Sharing, including citations, social media, and object embedding</li>
+							<li>Easily interpreted data feed (i.e. JSON, CSV, RDF, XML)</li>
+							<li>Credit pages for project creators and curators</li>
+						</ul>
+					</div>
+					<div style="width:45%;float:right;margin-left:2%;display:inline-block">
+						<ul style="font-size:80%;">
+							<li>Metrics</li>
+							<li>Exhibits and/or galleries</li>
+							<li>Support for objects that are not stored in the DRS</li>
+							<li>Two-way syncing data between the web publishing tool and the DRS</li>
+							<li>Annotations</li>
+							<li>XML-aware search</li>
+						</ul>
+					</div>
+						<aside class="notes">
+							Before we started work on the Hydra API that would feed DRS data to the Toolkit sites, we wanted to know precisely what functionality was needed to make a good digital project site.
+							<br/>
+							We met in December with representatives from a few DSG projects and partners, including representatives from:
+							<ul>
+								<li>the Our Marathon archive</li>
+								<li>the Early Caribbean Digital Archive,</li>
+								<li>University Archives and Special collections,</li>
+								<li>students from public history who work a lot with digital project publishing.</li>
+							</ul>
+							We discussed what they, as digital scholars, need from an integrated digital publishing site like the one we were about to develop.
+							<br/>
+							We identified a few common needs from the group, including:
+							<ul>
+								<li>faceted searching,</li>
+								<li>visualizations,</li>
+								<li>sharing,</li>
+								<li>downloading,</li>
+								<li>and galleries or exhibits.</li>
+							</ul>
+							A few features were suggested during this meeting that were worth exploring in the future, but were out of scope for the pilot project, including:
+							<ul>
+								<li>two-way data syncing between the publishing tool and the DRS</li>
+								<li>the ability to annotate files</li>
+								<li>XML-aware searching.</li>
+							</ul>
+							We synthesized the outcomes of the stakeholder meeting into a list of features, which would become the first set of tools in the Toolkit.
+						</aside>
+					</section>
+					<section>
+						<h2>Toolkit Design</h2>
+						<div style="width:45%;display:inline-block;float:left">
+							<h4>API</h4>
+							<ul>
+								<li>Search targeted DRS content</li>
+								<li>Browse targeted DRS content</li>
+								<li>Refine search and browse results using facets</li>
+								<li>Sort search Results</li>
+								<li>Brief and full metadata displays</li>
+								<li>Download options</li>
+							</ul>
+						</div>
+						<div style="width:45%;display:inline-block;float:right">
+							<h4>Wordpress</h4>
+							<ul>
+								<li>Map and timeline visualizations</li>
+								<li>Exhibits and/or galleries</li>
+								<li>Support for non-DRS content</li>
+							</ul>
+						</div>
+						<aside class="notes">
+							Now that we had a basic spec, we needed to decide what web publishing tools we were willing to support for the Toolkit.
+							<br/>
+							We originally planned on supporting Drupal, Omeka, and Wordpress, but quickly decided that Drupal would be too cumbersome.
+							<br/>
+							Omeka is very popular with digital scholars but we realized that there were few advantages to supporting both Omeka and Wordpress as part of the Toolkit infrastructure during the pilot project,
+							<br/>
+							especially since Wordpress was simpler to customize, and none of our pilot projects expressed a preference for one over the other.
+							<br/>
+							So, to simplify Toolkit development for the pilot, we decided to implement Toolkit sites using Wordpress only.
+							<br/>
+							It's worth noting that the DSG still supports Omeka for other digital projects, just not yet for Toolkit integration.
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Pilot Projects</h2>
+						<aside class="notes">
+							At this point we had a roadmap for development, but no projects to develop for.
+							<br/>
+							The library had already been working with 3 projects that could benefit from the Toolkit, so we decided to include those projects in the pilot.
+							<br/>
+							Those three projects include:
+						</aside>
+					</section>
+					<section>
+						<h3>"Picturing the World" Gallery, Graham Arader <small>University Libraries</small></h3>
+						<p>Tools needed: Exhibit</p>
+						<img src="images/arader_avian.png" class="stretch"/>
+						<aside class="notes">
+							The Library’s "Picturing the World" gallery is a collection of maps, watercolors, and Audubon prints donated to the library with support from Graham Arader.
+						</aside>
+					</section>
+					<section>
+						<h3>Catskills Institute, Professor Phil Brown <small>Department of Sociology and Anthropology</small></h3>
+						<p>Tools needed: Exhibit, Multipage Support</p>
+						<img src="images/catskills.jpg" class="stretch"/>
+						<aside class="notes">
+							Phil Brown's Catskills Institute is a collection of images, postcards, and other artifacts from Jewish communities in Catskill Mountains.
+						</aside>
+					</section>
+					<section>
+						<h3>Interviews with Jewish Latin American Writers and Artists, Professor Stephen A. Sadow <small>Department of Languages, Literatures, and Cultures</small></h3>
+						<p>Tools needed: A/V Playlist</p>
+						<img src="images/sadow.png" class="stretch"/>
+						<aside class="notes">
+							Stephen Sadow’s interviews with Latin American Writers and Artists is a series of 12 video interviews recorded in Argentina by Sadow himself in 2012.
+						</aside>
+					</section>
+					<section>
+						<h3>Call for Proposals</h3>
+						<ul style="width:40%;float:left;">
+							<li>Department of Mechanical and Industrial Engineering</li>
+							<li>Department of Nursing</li>
+							<li>Department of Music</li>
+							<li>Department of Political Science</li>
+							<li>Department of School of Criminology and Criminal Justice</li>
+						</ul>
+						<img src="images/DRSplus_RF.jpeg" style="width:50%;float:right;"/>
+						<aside class="notes">
+							In February we sent out a call for proposals to solicit projects and ideas for tool development from the Northeastern community.
+							<br/>
+							We received 12 proposals in two months from various university groups and departments, including the Departments of:
+							<ul>
+								<li>Mechanical and Industrial Engineering,</li>
+								<li>Nursing,</li>
+								<li>Music,</li>
+								<li>Political Science,</li>
+								<li>and the School of Criminology of Criminal Justice.</li>
+							</ul>
+							We selected projects based on whether or not they were feasible, suitable, and sharable.
+							<br/>
+							We wanted to make sure selected projects had content that either already existed in the DRS or was already digitized and could be ingested into the DRS.
+							<br/>
+							We wanted to make sure selected projects had the right to distribute the content, and if they did, that the content was appropriate to be ingested in the DRS, and it would be made public.
+							<br/>
+							And we wanted to make sure that the tools developed for that particular project could be shared with current or future Toolkit projects.
+							<br/>
+							Based on that criteria we selected three additional projects for the Toolkit pilot:
+						</aside>
+					</section>
+					<section>
+						<h3>A Proud Past: Boston Bouv&eacute; College, 1913-1981<small>University Archives and Special Collections</small></h3>
+						<p>Tools needed: Exhibit, A/V Playlist, Geographic and Timeline Visualizations</p>
+						<img src="images/slide5_5.png" class="stretch"/>
+						<aside class="notes">
+							University Archives and Special Collections proposed an exhibit to display DRS content related to the history of the Boston-Bouve College.
+						</aside>
+					</section>
+					<section>
+						<h3>Student Work Showcase, Digital Media Commons Studios <small>University Libraries</small></h3>
+						<p>Tools needed: Exhibit, A/V Playlist</p>
+						<img src="images/dmcstudios.jpeg" class="stretch"/>
+						<aside class="notes">
+							Digital Media Commons Studios proposed a showcase of student created work produced using their state-of-the-art recording tools.
+						</aside>
+					</section>
+					<section>
+						<h3>Holocaust Awareness Week Programming, Holocaust Awareness Committee <small>College of Social Sciences and Humanities</small></h3>
+						<p>Tools needed: Exhibit, A/V Playlist, Timeline Visualization</p>
+						<img src="images/hac.png" class="stretch"/>
+						<aside class="notes">
+							The Holocaust Awareness Committee proposed an archive of the recordings of Northeastern’s Holocaust Awareness Week program, which is an annual event that includes recorded lectures and survivor testimonies.
+						</aside>
+					</section>
+					<section>
+						<h2>Workflow</h2>
+						<img src="images/workflow.jpg" class="stretch" style="border:none"/>
+						<aside class="notes">
+							Once the framework was established and the projects were selected, we got to work preparing the project teams for their sites, which involved several steps:
+							<br/>
+							We set up an intake interview to learn more about the project work and to answer any questions the project team may have about the process.
+							<br/>
+							We recommended the project team review their content, with guidance from the university’s Copyright Officer, if needed.
+							<br/>
+							If the files were not already in the DRS, we helped the projects prepare their files to be ingested, and create metadata, if necessary.
+							<br/>
+							We then generated a Wordpress site from the Toolkit template that Eli will describe, and customized it based on basic project specifications.
+							<br/>
+							We offered training and instruction for project teams throughout the process, though mostly during the file preparation and Wordpress installation stages.
+							<br/>
+							Once the site is ready to launch, we review it to make sure it meets some basic Toolkit requirements, then we will help the project team promote their site.
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>DRS API</h2>
+						<h5>Written by David Cliff <small>Senior Digital Library Developer</small></h5>
+						<aside class="notes">
+							Our Senior Digital Library Developer, David, wrote an API for the DRS. API stands for Application Programmable Interface and is in simplest terms, a way to communicate with an application or software through http connections. In our case it provides basic retrieval and search operations. The components we use for the Toolkit are single file retrieval and scoped search.
+						</aside>
+					</section>
+					<section>
+						<h3>Single Item</h3>
+						<pre>/api/v1/search/[item pid]</pre>
+						<img src="images/api-single-item.png"  class="stretch"/>
+						<aside class="notes">
+							Single file retrieval returns JSON for completed, non-embargoed public objects - returns URIs to canonical objects, derivatives, thumbnails, and the metadata in MODS (rails endpoint which reaches out to fedora if the object isn’t already in cache)
+							retrieves MODS, derivatives, and master files
+						</aside>
+					</section>
+					<!-- <section>
+						<h3>Collection Export</h3>
+						<pre>/api/v1/export/[collection pid]</pre>
+						<img src="images/api-export.png"  class="stretch"/>
+						<aside class="notes">
+							retrieves MODS, derivatives, and master files for all items that are children of collection
+						</aside>
+					</section> -->
+					<section>
+						<h3>Scoped Search</h3>
+						<pre>/api/v1/search/[collection pid]</pre>
+						<img src="images/api-search.png"  class="stretch"/>
+						<aside class="notes">
+						Scoped search returns JSON for a nested search of a collection. It does some minimal processing around a solr search allowing us to return information about facets and pagination.
+						retrieves Blacklight search results scoped with collection, accepts facets and keywords
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2><a href="http://liblab.neu.edu/drstest">DRS + Wordpress</a></h2>
+						<aside class="notes">
+							The toolkit itself is a Wordpress plugin and Wordpress child-theme.
+							<!-- We chose Wordpress over Omeka because ultimately we thought the built in features of wordpress would be easier to learn and customize by our users. We would be curious to hear feedback on your thoughts and decisions on Wordpress versus Omeka. -->
+							Our plugin provides templates for three main components of search, browse, and single item view. These templates also enqueue Javascript from the plugin which uses AJAX to reach out to the API, parse the JSON, and present it to users. The plugin provides search, browse, and single item view with extremely minimal Wordpress storage- all Wordpress has in it’s database is the URL for the starting or parent collection in the DRS and some metadata settings. Inputting the collection URL from the DRS associates the collection structure established in the DRS.
+						</aside>
+					</section>
+					<section>
+						<h3>Search</h3>
+						<img src="images/wp-search.png"  class="stretch"/>
+						<aside class="notes">
+							Sets up a search page with list style and overrides wordpress search boxes with the search that hits the DRS API. Renders DRS results prominently and wordpress content minimally. Exposes facets and uses AJAX to update the page with fresh DRS results.
+						</aside>
+					</section>
+					<section>
+						<h3>Browse</h3>
+						<img src="images/wp-browse.png"  class="stretch"/>
+						<aside class="notes">
+							Sets up a browse page with a tiled styling. Hits the DRS API every time to get fresh results
+						</aside>
+					</section>
+					<section>
+						<h3>Collection Browse</h3>
+						<img src="images/wp-collections.png"  class="stretch"/>
+						<aside class="notes">
+							Allows users to browse by sub-collections of the collection entered in the settings page in a tiled layout
+						</aside>
+					</section>
+					<section>
+						<h3>Single Item</h3>
+						<img src="images/wp-single-item.png"  class="stretch"/>
+						<aside class="notes">
+							Provides a single item page retrieved dynamically from the DRS API with thumbnail or embedded media, MODS, and downloads of derivatives
+						</aside>
+					</section>
+					<!-- <section>
+						<h3>Admin Settings</h3>
+						<img src="images/wp-admin.png"  class="stretch"/>
+						<aside class="notes">
+							Allows users to input collection URL and then search/browse works automatically, allows customization of metadata on search/browse/collection pages and page titles
+						</aside>
+					</section> -->
+				</section>
+				<section>
+					<section>
+						<h3>Exhibits</h3>
+						<h5>Page Builder and Custom Shortcodes</h5>
+						<ul>
+							<li>Sliding gallery</li>
+							<li>Tiled gallery</li>
+							<li>Media playlist</li>
+							<li>Single item</li>
+						</ul>
+						<aside class="notes">
+							The other functionality that is a focal point for our users is the ability to create exhibits. Here we mean exhibits to be a page or set of pages that contains narrative and objects together with a variety of different layouts and display options such as galleries.
+							To achieve this inside Wordpress, we take advantage of some of Wordpress' core functionality and plugins developed by other people. We provide a page builder that allows users to create rows and columns for their content. To pull content dynamically from the DRS, we use a set of custom shortcodes. Wordpress defines shortcodes as "A shortcode is a WordPress-specific code that lets you do nifty things with very little effort. Shortcodes can embed files or create objects that would normally require lots of complicated, ugly code in just one line." The four shortcodes we've developed so far include:
+						</aside>
+					</section>
+					<section>
+						<h3>Sliding Gallery</h3>
+						<img src="images/sliding.png" class="stretch"/>
+						<aside class="notes">
+							uses bootstrap gallery functionality provided by the theme
+						</aside>
+					</section>
+					<section>
+						<h3>Tiled Gallery</h3>
+						<img src="images/tiled.png" class="stretch"/>
+						<aside class="notes">uses freewall</aside>
+					</section>
+					<section>
+						<h3>Media Playlist</h3>
+						<img src="images/media.png" class="stretch"/>
+						<aside class="notes">uses jwplayer and wowza to stream</aside>
+					</section>
+					<section>
+						<h3>Single Item</h3>
+						<img src="images/single.png" class="stretch"/>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3>Customizations</h3>
+						<a href="http://liblab.neu.edu/archives/the-origin-of-physical-therapy-education/">Bouve Example Exhibit</a>
+						<img src="" />
+						<!-- <a href="http://liblab.neu.edu/drstest">Live Demo</a> -->
+						<aside class="notes">Another major request from our users was the ability to customize the colors and styles of the page. That is why we chose Quest as our parent theme, which provides lots of customization options for coloring and gave us the ability to add our own customization settings - like the one we added for choosing a Northeastern Lockup.</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Challenges and Lessons Learned</h2>
+						<ul>
+							<li>Managing Expectations</li>
+							<li>CSS Customizations</li>
+							<li>Wordpress Media Gallery</li>
+							<li>University Branding</li>
+						</ul>
+						<aside class="notes">
+							<ul>
+							<li>Introducing project teams to the idea of repository storage with an API connection to Wordpress and managing pilot expectations was difficult.
+								<ul><li>We did our best to discuss the scope and timeline of the project and establish roles during the intake interview, but additional discussions and documentation was needed.</li></ul>
+							</li>
+							<li>Our beta testing revealed that even experienced Wordpress users were hesitant to alter CSS to customize the site.
+								<ul><li>We compromised by switching to a similar Wordpress theme with more customizations available in the back end.</li></ul>
+							</li>
+							<li>Those who were familiar with Wordpress expected more to be done with the media gallery, or expected that DRS content could be customized using tools similar to those available in the media gallery (like resizing images or adding captions).
+								<ul><li>We tweaked the Wordpress theme to improve customizations for DRS content, and improved documentation to explain when to use the Toolkit media gallery.</li></ul>
+							</li>
+							<li>Establishing how university branding should be incorporated into the site was more difficult than expected.
+								<ul><li>We eventually met with University Marketing to discuss our branding responsibilities. Their rule was, "If it's hosted on University servers, it needs to include University branding.", so we updated the template theme to include basic University branding.</li></ul>
+							</li>
+						</ul>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>What's Next for the DRS Project Toolkit</h2>
+						<ul style="font-size:90%;">
+							<li>Review and Launch
+								<ul>
+									<li>Arader, Archives, and Sadow</li>
+								</ul>
+							</li>
+							<li>Installations
+								<ul>
+									<li>Catskills, DMC Studios, and Holocaust Awareness Committee</li>
+								</ul>
+							</li>
+							<li>Annual Check-in and 2016 Call for Proposals</li>
+							<li>Toolkit Improvements
+								<ul>
+									<li>Improved integration with non-DRS content</li>
+									<li>Maintenance and Updates</li>
+									<li>Customizing the item display</li>
+									<li>TEI and annotations</li>
+								</ul>
+							</li>
+						</ul>
+						<aside class="notes">
+							As of today three projects have finished their customizations and have either launched or are under review and are about to launch, one project is working to customize their site, and the two remaining are working on digitizing and ingesting their files into the DRS.<br/>
+							Our plan for 2016 is to review the 2015 pilot to see how the process can be improved and to expand on the work we started.<br/>
+							We sent out another Call for Proposals at the beginning of February and will select new projects to generate new tools in April.<br/>
+							We've already identified a few changes we'd like to make, including:
+							<ul>
+								<li>improving integration with content that can't or shouldn't be stored in the DRS, or is already available in another repository, like the DPLA.</li>
+								<li>General scholarly workflows, including text transcription, translation, text analysis, and annotations</li>
+								<li>Integrating map and timeline visualizations with narratives and content into exhibits</li>
+							</ul>
+							We are currently working with students from the College of Computer and Information Science to build the map and timeline features.
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Thanks!</h2>
+						<!-- <p><b>Questions for You</b></p>
+						<ol>
+							<li>How have others sought to support project publishing and object storage?</li>
+							<li>What has been your experience with Wordpress for digital project work?</li>
+							<li>Have others experienced issues with supporting Wordpress over time?</li>
+						</ol>
+						<br/> -->
+						<h5>More Info</h5>
+						<p>Sarah Sweeney, sj.sweeney@neu.edu<br/>Eli Zoller, e.zoller@neu.edu</p>
+						<a href="https://twitter.com/nu_dsg">@NU_DSG</a> |
+						<a href="http://dsg.neu.edu/drs-project-toolkit">http://dsg.neu.edu/drs-project-toolkit</a>
+
+						<!-- <h5>DRS: <a href="http://repository.library.northeastern.edu">repository.library.northeastern.edu</a></h5>
+						<h5>DRS Github: <a href="http://github.com/NEU-Libraries/cerberus">github.com/NEU-Libraries/cerberus</a></h5>
+						<h5>DRS Toolkit Plugin: <a href="http://github.com/NEU-Libraries/drs-toolkit-wp-plugin">github.com/NEU-Libraries/drs-toolkit-wp-plugin</a></h5>
+						<h5>DRS Toolkit Theme: <a href="http://github.com/NEU-Libraries/drs-toolkit-wp-theme">github.com/NEU-Libraries/drs-toolkit-wp-theme</a></h5> -->
+					</section>
+				</section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+
+	</body>
+</html>

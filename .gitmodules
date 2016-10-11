@@ -1,0 +1,3 @@
+[submodule "neu"]
+	path = neu
+	url = https://github.com/elizoller/neu
